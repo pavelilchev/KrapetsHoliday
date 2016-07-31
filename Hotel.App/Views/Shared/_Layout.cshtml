@@ -6,39 +6,104 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div class="header">
+        <div class="header-section">
+            <div class="container">
+                <div class="row">
+                    <div class="header-container-left col-sm-4 col-md-4">
+                        <div class="reviews-container">
+                            <h3 class="review-title">Крапец Холидей</h3>
+                            <span class="review-stars" title="@Session["AverageRating"] среден рейтинг">
+                                @for (int i = 0; i < double.Parse(Session["AverageRating"].ToString()); i++)
+                                {
+                                    <img src="~/Files/Images/star-icon.png" alt="star icon"/>
+                                }
+                            </span>
+                            <a href="/Reviews/Index">@Session["ReviewsCount"] отзиви</a>
+                        </div>
+                    </div>
+                    <div class="header-container-middle col-sm-4 col-md-4">
+                        <a href="/Home/Index"><img src="~/Files/Images/logo.png" alt="Krapets Holiday Logo" class="site-logo" /></a>
+                    </div>
+                    <div class="header-container-right col-sm-4 col-md-4  text-right">
+                        <div class="header-location">
+                            <p>село Крапец</p>
+                            <p>телефон: 0888 888 888</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+        </div>
+
+        <div class="navigation-section">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navigation">
+                        <span class="icon-bar first-bar"></span>
+                        <span class="icon-bar second-bar"></span>
+                        <span class="icon-bar third-bar"></span>
+                    </button>
+                </div>
+                <div class="navigation navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Начало", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Галерия", "Index", "Gallery")</li>
+                        <li>@Html.ActionLink("Резервация", "Index", "Appointment")</li>
+                        <li>@Html.ActionLink("Контакти", "Index", "AboutUs")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
+    <div class="wrapper">
+        @RenderSection("slideshow", required: false)
+        <div class="container body-content">
+            @Html.Partial("_Messages")
+            @RenderBody()
+        </div>
+        @RenderSection("googlemap", required: false)
+        <div class="push"></div>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <footer>
+        <div class="footer-section-top">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-container-left col-sm-4 col-md-4">
+                        <a href="https://www.facebook.com/" target="_blank"><img src="~/Files/Images/facebook-icon.png" alt="Facebook logo" /></a>
+                        <a href="https://plus.google.com/" target="_blank"><img src="~/Files/Images/google-plus-icon.png" alt="Google+ logo" /></a>
+                    </div>
+                    <div class="footer-container-middle col-sm-4 col-md-4">
+                        <a href="/Home/Index"><img src="~/Files/Images/logo.png" alt="Krapets Holiday Logo"/></a>
+                    </div>
+                    <div class="footer-container-right col-sm-4 col-md-4 text-right">
+                        <p>село Крапец</p>
+                        <p>телефон: 0888 888 888</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-section-bottom">
+            <div class="container">
+                <div class="bottom row">
+                    <div class="footer-social-icons col-sm-6">
+                        <p>&copy; @DateTime.Now.Year - Крапец Холидей</p>
+                    </div>
+                    <div class="footer-author col-sm-6 text-right">
+                        powered by PACO
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

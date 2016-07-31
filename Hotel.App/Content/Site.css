@@ -1,24 +1,163 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿@font-face {
+    font-family: 'MotionPicture';
+    src: url('/fonts/MotionPicture_PersonalUseOnly.ttf') format('truetype');
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+@font-face {
+    font-family: 'MIROSLN';
+    src: url('../fonts/MIROSLN.ttf') format('truetype');
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+/* #region footer pusher*/
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -150px;
 }
+
+.footer,
+.push {
+  height: 150px;
+}
+/* #endregion footer pusher*/
+
+/*#region header */
+.header {
+    color: #fff;
+}
+
+.header-container-left {
+    margin-top: 16px;
+}
+
+.header-container-right {
+    margin-top: 30px;
+}
+
+.header-container-middle, .footer-container-middle {
+    text-align: center;
+}
+
+
+    .header-container-middle img, .footer-container-middle img {
+        float: none;
+        padding: 5px 0;
+    }
+
+.header-section, .footer-section-top {
+    background-color: #4cb4b8;
+}
+
+.navigation-section, .footer-section-bottom {
+    background-color: #73c2c8;
+}
+
+.navigation a, .navbar-header button, .reviews-container a, .footer-section-top, .footer-section-bottom {
+    color: #fff;
+}
+
+.navbar-header span {
+    background: #fff;
+}
+
+.nav li a:hover {
+    color: #4cb4b8;
+    background-color: #73c2c8;
+}
+
+.reviews-container {
+    padding-left: 30px;
+}
+
+.header-location {
+    padding-right: 13px;
+}
+
+.review-stars img {
+    width: 20px;
+    height: 20px;
+}
+/*#endregion header */
+
+/* #region slideshow*/
+#owl-demo .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/* endregion slideshow*/
+
+/* region footer*/
+.footer-container-left img:hover {
+    -ms-transform: rotate(360deg); /* IE 9 */
+    -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+    transform: rotate(360deg);
+    transition: all linear 0.3s;
+}
+
+.footer-container-left {
+    margin-top: 50px;
+}
+
+.footer-container-right {
+    margin-top: 30px;
+}
+
+.footer-section-bottom {
+    padding: 10px;
+}
+
+.bottom {
+    margin-top: 10px;
+}
+/*#endregion footer */
+
+/* #region home page*/
+.welcome-note {
+    font: 18px MIROSLN;
+    margin: 100px 0;
+}
+
+    .welcome-note h1 {
+        font: 28px MIROSLN;
+        color: #ff0000;
+    }
+
+.home-image {
+    float: right;
+    margin: 0 0 20px 20px;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    border-top: 5px solid #4cb4b8;
+}
+/* #endregion home page*/
+
+/* Default queries */
+
+@media (max-width: 770px) {
+    .header-container-left, .header-container-middle, .header-container-right {
+        text-align: center;
+        margin: 0;
+    }
+
+    .reviews-container, .header-location {
+        padding: 0;
+    }
+
+    .home-image {
+        float: none;
+        text-align: center;
+    }
+}
+
+/* endregion default queries*/

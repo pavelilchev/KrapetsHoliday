@@ -5,7 +5,8 @@ namespace Hotel.App.App_Start
 {
     using System;
     using System.Web;
-
+    using Data;
+    using Data.UnitOfWork;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
@@ -61,6 +62,8 @@ namespace Hotel.App.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<IHotelData>().To<HotelData>()
+               .WithConstructorArgument("context", new HotelDbContext());
         }        
     }
 }

@@ -1,8 +1,7 @@
-﻿using System.Web;
-using System.Web.Optimization;
-
-namespace Hotel.App
+﻿namespace Hotel.App
 {
+    using System.Web.Optimization;
+
     public class BundleConfig
     {
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
@@ -26,6 +25,17 @@ namespace Hotel.App
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/main-script").Include(
+                     "~/Scripts/main-script.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/owlcarouselScript").Include(
+                        "~/Scripts/owl.carousel.js"));
+
+            bundles.Add(new StyleBundle("~/Content/OwlCarousel/owlcarouselCss").Include(
+                       "~/Content/OwlCarousel/owl.carousel.css",
+                       "~/Content/OwlCarousel/owl.theme.css",
+                       "~/Content/OwlCarousel/owl.transitions.css"));
         }
     }
 }

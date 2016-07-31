@@ -59,15 +59,19 @@ namespace Hotel.Data.Migrations
                 return;
             }
 
+            var rnd = new Random();
             for (int i = 0; i < 10; i++)
             {
                 var review = new Review();
                 string content = "This is creat content " + i;
                 var author = context.Users.FirstOrDefault(u => u.UserName == "user@gmail.com");
-                var date = DateTime.Now;
+                DateTime date = DateTime.Now;
+                int rating = 5 - rnd.Next(4);
+
                 review.Content = content;
                 review.Author = author;
                 review.CreationDate = date;
+                review.Rating = rating;
 
                 context.Reviews.Add(review);
             }

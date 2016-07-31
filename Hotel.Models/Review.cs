@@ -24,6 +24,9 @@
         [Required]
         public DateTime CreationDate { get; set; }
 
+        [Required]
+        public int Rating { get; set; }
+
         public virtual ICollection<Comment> Comments { get; set; }
     }
 }
