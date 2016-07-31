@@ -59,7 +59,7 @@ html, body {
     background-color: #73c2c8;
 }
 
-.navigation a, .navbar-header button, .reviews-container a, .footer-section-top, .footer-section-bottom {
+.navigation a, .navbar-header button, .reviews-container a, .footer-section-top, .footer-section-bottom, .header-location a, .footer-container-right a {
     color: #fff;
 }
 
