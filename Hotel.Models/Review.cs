@@ -28,5 +28,7 @@
         public int Rating { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
+
+        public bool IsPublished { get; set; }
     }
 }

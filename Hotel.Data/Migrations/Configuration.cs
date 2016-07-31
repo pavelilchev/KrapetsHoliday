@@ -1,4 +1,4 @@
-namespace Hotel.Data.Migrations
+﻿namespace Hotel.Data.Migrations
 {
     using System;
     using Microsoft.AspNet.Identity;
@@ -63,7 +63,7 @@ namespace Hotel.Data.Migrations
             for (int i = 0; i < 10; i++)
             {
                 var review = new Review();
-                string content = "This is creat content " + i;
+                string content = "Това е един страхотен отзив " + i;
                 var author = context.Users.FirstOrDefault(u => u.UserName == "user@gmail.com");
                 DateTime date = DateTime.Now;
                 int rating = 5 - rnd.Next(4);
@@ -72,6 +72,7 @@ namespace Hotel.Data.Migrations
                 review.Author = author;
                 review.CreationDate = date;
                 review.Rating = rating;
+                review.IsPublished = true;
 
                 context.Reviews.Add(review);
             }

@@ -9,6 +9,7 @@
     using Microsoft.Owin.Security;
     using Models;
     using Hotel.Models;
+    using Models.ViewModels;
 
     [Authorize]
     public class AccountController : Controller

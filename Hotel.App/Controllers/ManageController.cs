@@ -8,6 +8,7 @@
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
     using Models;
+    using Models.ViewModels;
 
     [Authorize]
     public class ManageController : Controller

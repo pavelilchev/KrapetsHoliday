@@ -1,14 +1,16 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Hotel.App.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Hotel.App.App_Start.NinjectWebCommon), "Stop")]
+using Hotel.App;
 
-namespace Hotel.App.App_Start
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(NinjectWebCommon), "Stop")]
+
+namespace Hotel.App
 {
     using System;
     using System.Web;
+    using AutoMapper;
     using Data;
     using Data.UnitOfWork;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
     using Ninject;
     using Ninject.Web.Common;
 
