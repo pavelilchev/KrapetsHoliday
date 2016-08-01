@@ -10,21 +10,20 @@
 
 /* #region footer pusher*/
 html, body {
-  height: 100%;
-  margin: 0;
+    height: 100%;
+    margin: 0;
 }
 
 .wrapper {
-  min-height: 100%;
-
-  /* Equal to height of footer */
-  /* But also accounting for potential margin-bottom of last child */
-  margin-bottom: -150px;
+    min-height: 100%;
+    /* Equal to height of footer */
+    /* But also accounting for potential margin-bottom of last child */
+    margin-bottom: -150px;
 }
 
 .footer,
 .push {
-  height: 150px;
+    height: 150px;
 }
 /* #endregion footer pusher*/
 
@@ -125,10 +124,10 @@ html, body {
     margin: 100px 0;
 }
 
-    .welcome-note h1 {
-        font: 28px MIROSLN;
-        color: #ff0000;
-    }
+h1 {
+    font: 28px MIROSLN;
+    color: #ff0000;
+}
 
 .home-image {
     float: right;
@@ -142,8 +141,13 @@ html, body {
 }
 /* #endregion home page*/
 
-/* Default queries */
+/* #region Reviews */
+.leave-review {
+    margin: 50px 0;
+}
+/* #endregion Reviews */
 
+/* Default queries */
 @media (max-width: 770px) {
     .header-container-left, .header-container-middle, .header-container-right {
         text-align: center;
@@ -159,5 +163,4 @@ html, body {
         text-align: center;
     }
 }
-
 /* endregion default queries*/

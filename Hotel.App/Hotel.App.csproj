@@ -204,6 +204,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ReviewsController.cs" />
@@ -221,7 +222,13 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Lightbox\lightbox.css" />
+    <Content Include="Content\Lightbox\lightbox.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="Files\Images\close.png" />
+    <Content Include="Files\Images\loading.gif" />
+    <Content Include="Files\Images\next.png" />
+    <Content Include="Files\Images\prev.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -245,6 +252,10 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Lightbox\lightbox-plus-jquery.js" />
+    <Content Include="Scripts\Lightbox\lightbox-plus-jquery.min.js" />
+    <Content Include="Scripts\Lightbox\lightbox.js" />
+    <Content Include="Scripts\Lightbox\lightbox.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
@@ -288,11 +299,16 @@
     <Content Include="Views\Reviews\Details.cshtml" />
     <Content Include="Views\Reviews\Edit.cshtml" />
     <Content Include="Views\Reviews\Index.cshtml" />
+    <Content Include="Scripts\Lightbox\lightbox-plus-jquery.min.map" />
+    <Content Include="Scripts\Lightbox\lightbox.min.map" />
+    <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Reviews\DisplayTemplates\ReviewVewModel.cshtml" />
     <None Include="Views\Shared\_Messages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Files\" />
+    <Folder Include="Files\Images\Slideshow\" />
+    <Folder Include="Scripts\OwlCarousel\" />
     <Folder Include="Views\Shared\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>

@@ -29,13 +29,19 @@
             bundles.Add(new ScriptBundle("~/bundles/main-script").Include(
                      "~/Scripts/main-script.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/owlcarouselScript").Include(
-                        "~/Scripts/owl.carousel.js"));
+            bundles.Add(new ScriptBundle("~/bundles/OwlCarousel/owlcarouselScript").Include(
+                        "~/Scripts/OwlCarousel/owl.carousel.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/OwlCarousel/owlcarouselCss").Include(
                        "~/Content/OwlCarousel/owl.carousel.css",
                        "~/Content/OwlCarousel/owl.theme.css",
                        "~/Content/OwlCarousel/owl.transitions.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Lightbox/lightbox").Include(
+                      "~/Scripts/Lightbox/lightbox.min.js"));
+
+            bundles.Add(new StyleBundle("~/Content/Lightbox/lightbox").Include(
+                       "~/Content/Lightbox/lightbox.css"));
         }
     }
 }

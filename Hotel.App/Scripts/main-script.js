@@ -15,5 +15,4 @@
         // itemsMobile : false
 
     });
-
 });

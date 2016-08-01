@@ -1,7 +1,7 @@
 ﻿namespace Hotel.App.Controllers
 {
-    using System.Collections;
     using System.Collections.Generic;
+    using System.Data.Entity;
     using System.Linq;
     using System.Net;
     using System.Web.Mvc;
@@ -20,10 +20,11 @@
         // GET: Reviews
         public ActionResult Index()
         {
-            var reviews = this.Data.Reviews.All().Where(r => r.IsPublished);
+            var reviews = this.Data.Reviews.All().Where(r => r.IsPublished).Include(r => r.Comments).Include(r => r.Author).ToList();
 
-            var reviewViewModels = Mapper.Map<IEnumerable<ReviewVewModel>>(reviews);
-            return this.View(this.Data.Reviews.All());
+            var vmReviews = Mapper.Map<IEnumerable<Review>, IEnumerable<ReviewVewModel>>(reviews);
+           
+            return this.View(vmReviews);
         }
 
         // GET: Reviews/Details/5
