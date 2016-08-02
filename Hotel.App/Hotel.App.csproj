@@ -202,7 +202,9 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -303,10 +305,20 @@
     <Content Include="Scripts\Lightbox\lightbox.min.map" />
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Reviews\DisplayTemplates\ReviewVewModel.cshtml" />
+    <Content Include="Views\Appointment\Create.cshtml" />
+    <Content Include="Views\Appointment\Delete.cshtml" />
+    <Content Include="Views\Appointment\Details.cshtml" />
+    <Content Include="Views\Appointment\Edit.cshtml" />
+    <Content Include="Views\Appointment\Index.cshtml" />
+    <None Include="Views\AboutUs\Index.cshtml" />
     <None Include="Views\Shared\_Messages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Files\Gallery\HouseFor4\" />
+    <Folder Include="Files\Gallery\HouseFor6\" />
+    <Folder Include="Files\Gallery\SummerKitchen\" />
+    <Folder Include="Files\Gallery\Yard\" />
     <Folder Include="Files\Images\Slideshow\" />
     <Folder Include="Scripts\OwlCarousel\" />
     <Folder Include="Views\Shared\DisplayTemplates\" />

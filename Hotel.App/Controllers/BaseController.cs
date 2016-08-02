@@ -23,9 +23,31 @@
             this.UserProfile = userProfile;
         }
 
+        
+        private void BindHeader()
+        {
+            if (this.Session != null && this.Session["ReviewsCount"] != null && this.Session["AverageRating"] != null)
+            {
+                return;
+            }
+
+            var reviews = this.Data.Reviews.All();
+            int reviewsCount = reviews.Count();
+            double averageRating = reviews.Sum(r => r.Rating) / (double)reviewsCount;
+            this.Session["ReviewsCount"] = reviewsCount;
+            this.Session["AverageRating"] = averageRating;
+        }
+
         protected IHotelData Data { get; private set; }
 
         protected User UserProfile { get; private set; }
+
+        protected override void Initialize(RequestContext requestContext)
+        {
+            base.Initialize(requestContext);
+
+            this.BindHeader();
+        }
 
         protected override IAsyncResult BeginExecute(RequestContext requestContext, AsyncCallback callback, object state)
         {

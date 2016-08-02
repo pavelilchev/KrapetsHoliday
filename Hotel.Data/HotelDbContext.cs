@@ -29,5 +29,7 @@
 
             base.OnModelCreating(modelBuilder);
         }
+
+        public System.Data.Entity.DbSet<Hotel.Models.Appointment> Appointments { get; set; }
     }
 }

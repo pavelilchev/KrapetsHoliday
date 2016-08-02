@@ -145,7 +145,18 @@ h1 {
 .leave-review {
     margin: 50px 0;
 }
+
+.empty-starts {
+    height: 19px;
+    background: url(/Files/Images/stars_sprite_icon.png) no-repeat 0 -25px;
+}
 /* #endregion Reviews */
+
+/* #region Gallery */
+.gallery img{
+    margin: 5px;
+}
+/* #endregion Gallery */
 
 /* Default queries */
 @media (max-width: 770px) {
