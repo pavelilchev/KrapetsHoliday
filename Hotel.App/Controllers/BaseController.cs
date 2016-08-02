@@ -26,7 +26,7 @@
         
         private void BindHeader()
         {
-            if (this.Session != null && this.Session["ReviewsCount"] != null && this.Session["AverageRating"] != null)
+            if (this.Session["ReviewsCount"] != null && this.Session["AverageRating"] != null)
             {
                 return;
             }

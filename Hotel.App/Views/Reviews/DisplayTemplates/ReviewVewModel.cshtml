@@ -1,10 +1,10 @@
 ﻿@model Hotel.App.Models.ViewModels.ReviewVewModel
 <div class="row">
-    <div class="col-xs-5 text-right">
+    <div class="col-xs-4 text-right">
         <div class="review-author">@Model.Author.UserName</div>
         <div class="review-date">@Model.CreationDate</div>
     </div>
-    <div class="col-xs-7 text-left">
+    <div class="col-xs-8 text-left">
         <div class="empty-starts"></div>
         <div class="review-context">@Model.Content</div>
         <div class="review-cimments"><i>коментари</i> @Model.CommentsCount</div>

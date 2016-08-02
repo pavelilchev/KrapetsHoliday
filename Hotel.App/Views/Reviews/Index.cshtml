@@ -8,6 +8,9 @@
 
 @Html.DisplayForModel()
 
-<div class="leave-review">
-    <a href="/Reviews/Create" class="btn btn-primary col-sm-4" title="Напишете отзив">Напишете отзив</a>
-</div>
+@if (Request.IsAuthenticated)
+{
+    <div class="leave-review text-center">
+        <a href="/Reviews/Create" class="btn btn-danger col-xs-offset-4 col-sm-4" title="Напишете отзив">Напишете отзив</a>
+    </div>
+}
