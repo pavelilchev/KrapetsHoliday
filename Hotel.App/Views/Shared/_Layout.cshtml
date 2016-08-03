@@ -64,7 +64,8 @@
     <div class="wrapper">
         @RenderSection("slideshow", required: false)
         <div class="container body-content">
-            @Html.Partial("_Messages")
+           @* @Html.Partial("_Messages")*@
+            @Html.Partial("~/Views/Shared/_Messages.cshtml")
             @RenderBody()
         </div>
         @RenderSection("googlemap", required: false)
