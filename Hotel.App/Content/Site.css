@@ -1,11 +1,6 @@
 ﻿@font-face {
-    font-family: 'MotionPicture';
-    src: url('/fonts/MotionPicture_PersonalUseOnly.ttf') format('truetype');
-}
-
-@font-face {
     font-family: 'MIROSLN';
-    src: url('../fonts/MIROSLN.ttf') format('truetype');
+    src: url('~/fonts/MIROSLN.ttf') format('truetype');
 }
 
 /* #region footer pusher*/
