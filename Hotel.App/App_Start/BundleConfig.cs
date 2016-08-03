@@ -40,7 +40,7 @@
             bundles.Add(new ScriptBundle("~/bundles/lightbox").Include(
                       "~/Scripts/Lightbox/lightbox.min.js"));
 
-            bundles.Add(new StyleBundle("~/Content/lightbox").Include(
+            bundles.Add(new StyleBundle("~/Content/lightboxCss").Include(
                        "~/Content/Lightbox/lightbox.css"));
         }
     }
