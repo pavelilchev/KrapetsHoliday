@@ -97,7 +97,7 @@ html, body {
 }
 
 .footer-container-left {
-    margin-top: 50px;
+    margin: 50px 0 10px;
 }
 
 .footer-container-right {
@@ -169,9 +169,15 @@ h1 {
 
 /* Default queries */
 @media (max-width: 770px) {
-    .header-container-left, .header-container-middle, .header-container-right {
+    .header-container-left, .header-container-middle, .header-container-right,
+     .footer-container-middle,.footer-container-right {
         text-align: center;
         margin: 0;
+    }
+
+    .footer-container-left {
+        text-align: center;
+        margin: 10px;
     }
 
     .reviews-container, .header-location {
