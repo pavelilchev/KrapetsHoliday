@@ -137,6 +137,10 @@ h1 {
 /* #endregion home page*/
 
 /* #region Reviews */
+.review-title {
+    margin-left: 20px;
+}
+
 .leave-review {
     margin: 50px 0;
 }
@@ -144,6 +148,16 @@ h1 {
 .empty-starts {
     height: 19px;
     background: url(/Files/Images/stars_sprite_icon.png) no-repeat 0 -25px;
+}
+
+.single-review {
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #CCC;
+}
+
+.author-info{
+    border-right: 1px solid #CCC;
 }
 /* #endregion Reviews */
 
