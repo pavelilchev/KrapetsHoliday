@@ -226,6 +226,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Lightbox\lightbox.css" />
     <Content Include="Content\Lightbox\lightbox.min.css" />
+    <Content Include="Content\OwlCarousel\owl.carousel.css" />
+    <Content Include="Content\OwlCarousel\owl.theme.css" />
+    <Content Include="Content\OwlCarousel\owl.transitions.css" />
     <Content Include="favicon.ico" />
     <Content Include="Files\Gallery\HouseFor4\Krapets_Holiday_4.jpg" />
     <Content Include="Files\Gallery\HouseFor4\Krapets_Holiday_4a.jpg" />
@@ -306,6 +309,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="fonts\MIROSLN.ttf" />
+    <Content Include="fonts\MotionPicture_PersonalUseOnly.ttf" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -322,7 +327,10 @@
     <Content Include="Scripts\Lightbox\lightbox-plus-jquery.min.js" />
     <Content Include="Scripts\Lightbox\lightbox.js" />
     <Content Include="Scripts\Lightbox\lightbox.min.js" />
+    <Content Include="Scripts\main-script.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\OwlCarousel\owl.carousel.js" />
+    <Content Include="Scripts\OwlCarousel\owl.carousel.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
@@ -379,7 +387,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\OwlCarousel\" />
     <Folder Include="Views\Shared\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>

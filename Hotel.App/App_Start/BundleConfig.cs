@@ -8,7 +8,10 @@
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                         "~/Scripts/main-script.js",
+                         "~/Scripts/OwlCarousel/owl.carousel.min.js",
+                          "~/Scripts/Lightbox/lightbox.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -24,24 +27,28 @@
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
-
-            bundles.Add(new ScriptBundle("~/bundles/main-script").Include(
-                     "~/Scripts/main-script.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/OwlCarousel/owlcarouselScript").Include(
-                        "~/Scripts/OwlCarousel/owl.carousel.min.js"));
-
-            bundles.Add(new StyleBundle("~/Content/OwlCarousel/owlcarouselCss").Include(
+                      "~/Content/site.css",
                        "~/Content/OwlCarousel/owl.carousel.css",
                        "~/Content/OwlCarousel/owl.theme.css",
-                       "~/Content/OwlCarousel/owl.transitions.css"));
-
-            bundles.Add(new ScriptBundle("~/bundles/Lightbox/lightbox").Include(
-                      "~/Scripts/Lightbox/lightbox.min.js"));
-
-            bundles.Add(new StyleBundle("~/Content/Lightbox/lightbox").Include(
+                       "~/Content/OwlCarousel/owl.transitions.css",
                        "~/Content/Lightbox/lightbox.css"));
+
+            //bundles.Add(new ScriptBundle("~/bundles/main-script").Include(
+            //         "~/Scripts/main-script.js"));
+
+            //bundles.Add(new ScriptBundle("~/bundles/OwlCarousel/owlcarouselScript").Include(
+            //            "~/Scripts/OwlCarousel/owl.carousel.min.js"));
+
+            //bundles.Add(new StyleBundle("~/Content/OwlCarousel/owlcarouselCss").Include(
+            //           "~/Content/OwlCarousel/owl.carousel.css",
+            //           "~/Content/OwlCarousel/owl.theme.css",
+            //           "~/Content/OwlCarousel/owl.transitions.css"));
+
+            //bundles.Add(new ScriptBundle("~/bundles/Lightbox/lightbox").Include(
+            //          "~/Scripts/Lightbox/lightbox.min.js"));
+
+            //bundles.Add(new StyleBundle("~/Content/Lightbox/lightbox").Include(
+            //           "~/Content/Lightbox/lightbox.css"));
         }
     }
 }
