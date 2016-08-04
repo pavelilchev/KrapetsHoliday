@@ -47,6 +47,14 @@
             }
         }
 
+        public IRepository<Appointment> Appointments
+        {
+            get
+            {
+                return this.GetRepository<Appointment>();
+            }
+        }
+
         public int SaveChanges()
         {
             return this.dbContext.SaveChanges();

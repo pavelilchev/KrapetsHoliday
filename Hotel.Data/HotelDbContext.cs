@@ -15,6 +15,8 @@
 
         public DbSet<Comment> Comments { get; set; }
 
+        public DbSet<Appointment> Appointments { get; set; }
+
         public static HotelDbContext Create()
         {
             return new HotelDbContext();
@@ -29,7 +31,5 @@
 
             base.OnModelCreating(modelBuilder);
         }
-
-        public System.Data.Entity.DbSet<Hotel.Models.Appointment> Appointments { get; set; }
     }
 }

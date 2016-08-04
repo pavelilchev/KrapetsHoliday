@@ -7,18 +7,21 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Hotel.Data;
+using Hotel.Data.UnitOfWork;
 using Hotel.Models;
 
 namespace Hotel.App.Controllers
 {
-    public class AppointmentController : Controller
+    public class AppointmentController : BaseController
     {
-        private HotelDbContext db = new HotelDbContext();
+        protected AppointmentController(IHotelData data) : base(data)
+        {
+        }
 
         // GET: Appointments
         public ActionResult Index()
         {
-            return View(db.Appointments.ToList());
+            return View(this.Data.Appointments.All().ToList());
         }
 
         // GET: Appointments/Details/5
@@ -28,7 +31,7 @@ namespace Hotel.App.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Appointment appointment = db.Appointments.Find(id);
+            Appointment appointment = this.Data.Appointments.Find(id);
             if (appointment == null)
             {
                 return HttpNotFound();
@@ -51,8 +54,8 @@ namespace Hotel.App.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Appointments.Add(appointment);
-                db.SaveChanges();
+                this.Data.Appointments.Add(appointment);
+                this.Data.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +69,7 @@ namespace Hotel.App.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Appointment appointment = db.Appointments.Find(id);
+            Appointment appointment = this.Data.Appointments.Find(id);
             if (appointment == null)
             {
                 return HttpNotFound();
@@ -83,8 +86,8 @@ namespace Hotel.App.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(appointment).State = EntityState.Modified;
-                db.SaveChanges();
+                this.Data.Appointments.Update(appointment);
+                this.Data.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(appointment);
@@ -97,7 +100,7 @@ namespace Hotel.App.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Appointment appointment = db.Appointments.Find(id);
+            Appointment appointment = this.Data.Appointments.Find(id);
             if (appointment == null)
             {
                 return HttpNotFound();
@@ -110,19 +113,10 @@ namespace Hotel.App.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Appointment appointment = db.Appointments.Find(id);
-            db.Appointments.Remove(appointment);
-            db.SaveChanges();
+            Appointment appointment = this.Data.Appointments.Find(id);
+            this.Data.Appointments.Remove(appointment);
+            this.Data.SaveChanges();
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }
