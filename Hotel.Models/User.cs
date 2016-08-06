@@ -11,7 +11,7 @@
     {
         public virtual ICollection<Review> Reviews { get; set; }
 
-        public virtual ICollection<Comment> Comments  { get; set; } 
+        public virtual ICollection<ReviewComment> Comments  { get; set; } 
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

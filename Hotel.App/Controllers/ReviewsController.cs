@@ -1,5 +1,6 @@
 ﻿namespace Hotel.App.Controllers
 {
+    using System;
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
@@ -20,7 +21,7 @@
         // GET: Reviews
         public ActionResult Index()
         {
-            var reviews = this.Data.Reviews.All().Where(r => r.IsPublished).Include(r => r.Comments).Include(r => r.Author).ToList();
+            var reviews = this.Data.Reviews.All().Include(r => r.Comments).Include(r => r.Author).ToList();
 
             var vmReviews = Mapper.Map<IEnumerable<Review>, IEnumerable<ReviewVewModel>>(reviews);
            
@@ -45,6 +46,7 @@
         }
 
         // GET: Reviews/Create
+        [Authorize]
         public ActionResult Create()
         {
             return this.View();
@@ -54,11 +56,16 @@
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Content,CreationDate")] Review review)
+        public ActionResult Create([Bind(Include = "Id,Content")] Review review)
         {
             if (this.ModelState.IsValid)
             {
+                review.Author = this.UserProfile;
+                review.CreationDate = DateTime.Now;
+                review.Rating = 5;
+
                 this.Data.Reviews.Add(review);
                 this.Data.SaveChanges();
                 return this.RedirectToAction("Index");

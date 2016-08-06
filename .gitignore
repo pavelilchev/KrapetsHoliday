@@ -302,3 +302,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 Hotel.App/Web.config
+Hotel.App/Web.config
+*.config

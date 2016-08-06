@@ -142,12 +142,13 @@ h1 {
 }
 
 .leave-review {
-    margin: 50px 0;
+    margin-bottom: 150px;
 }
 
 .empty-starts {
     height: 19px;
     background: url(/Files/Images/stars_sprite_icon.png) no-repeat 0 -25px;
+     background-position-x: center; 
 }
 
 .single-review {
@@ -159,6 +160,14 @@ h1 {
 .author-info{
     border-right: 1px solid #CCC;
 }
+
+.review-title {
+    margin-bottom: 50px;
+}
+
+.form-group textarea {
+    max-width: 100%;
+}
 /* #endregion Reviews */
 
 /* #region Gallery */
@@ -167,7 +176,7 @@ h1 {
 }
 /* #endregion Gallery */
 
-/* Default queries */
+/* #region Default queries */
 @media (max-width: 770px) {
     .header-container-left, .header-container-middle, .header-container-right,
      .footer-container-middle,.footer-container-right {
@@ -188,5 +197,9 @@ h1 {
         float: none;
         text-align: center;
     }
+
+    .review-body {
+        text-align: center;
+    }
 }
-/* endregion default queries*/
+/* #endregion default queries*/

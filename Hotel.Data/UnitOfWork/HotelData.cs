@@ -39,11 +39,11 @@
             }
         }
 
-        public IRepository<Comment> Comments
+        public IRepository<ReviewComment> Comments
         {
             get
             {
-                return this.GetRepository<Comment>();
+                return this.GetRepository<ReviewComment>();
             }
         }
 

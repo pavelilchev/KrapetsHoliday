@@ -1,14 +1,14 @@
 ﻿@model Hotel.App.Models.ViewModels.ReviewVewModel
 
 <div class="row single-review">
-    <div class="col-md-2 col-sm-3 col-xs-4 text-center author-info">
+    <div class="col-sm-offset-2 col-md-2 col-sm-3 text-center author-info">
         <div class="review-author">@Model.Author.UserName</div>
         <div class="review-date">@Model.CreationDate</div>
-        <div class="empty-starts"></div>
+        <div class="empty-starts text-center"></div>
     </div>
 
-    <div class="col-md-10 col-sm-9 col-xs-8 text-left">
-        <div class="review-context">@Model.Content</div>
+    <div class="col-md-8 col-sm-7  text-left review-body">
+        <div>@Model.Content</div>
         <a href="~/Reviews/Details?id=@Model.Id"><div class="review-cimments"><i>коментари</i> @Model.CommentsCount</div></a>
     </div>
 </div>

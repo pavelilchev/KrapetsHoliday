@@ -13,7 +13,7 @@
 
         public DbSet<Review> Reviews { get; set; }
 
-        public DbSet<Comment> Comments { get; set; }
+        public DbSet<ReviewComment> Comments { get; set; }
 
         public DbSet<Appointment> Appointments { get; set; }
 

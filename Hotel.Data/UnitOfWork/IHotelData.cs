@@ -9,7 +9,7 @@
 
         IRepository<Review> Reviews { get; }
         
-        IRepository<Comment> Comments { get; }
+        IRepository<ReviewComment> Comments { get; }
 
         IRepository<Appointment> Appointments { get; }
 

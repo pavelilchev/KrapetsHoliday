@@ -8,17 +8,17 @@
     {
         public Review()
         {
-           this.Comments = new HashSet<Comment>(); 
+           this.Comments = new HashSet<ReviewComment>(); 
         }
 
         [Key]
         public int Id { get; set; }
 
         [Required]
-        [MinLength(20)]
+        [MinLength(20, ErrorMessage = "Отзивът трябва да е поне 20 символа дълъг.")]
+        [DataType(DataType.MultilineText)]
         public string Content { get; set; }
 
-        [Required]
         public virtual User Author { get; set; }
 
         [Required]
@@ -27,7 +27,7 @@
         [Required]
         public int Rating { get; set; }
 
-        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<ReviewComment> Comments { get; set; }
 
         public bool IsPublished { get; set; }
     }

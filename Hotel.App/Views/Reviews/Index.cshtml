@@ -4,13 +4,10 @@
     ViewBag.Title = "Отзиви";
 }
 
-<h1 class="review-title">Отзиви</h1>
+<h1 class="review-title text-center">Отзиви</h1>
 
 @Html.DisplayForModel()
 
-@if (Request.IsAuthenticated)
-{
-    <div class="leave-review text-center">
-        <a href="/Reviews/Create" class="btn btn-danger col-xs-offset-4 col-sm-4" title="Напишете отзив">Напишете отзив</a>
-    </div>
-}
+<div class="leave-review text-center">
+    <a href="/Reviews/Create" class="btn btn-danger col-xs-offset-4 col-sm-4" title="Напишете отзив">Напишете отзив</a>
+</div>

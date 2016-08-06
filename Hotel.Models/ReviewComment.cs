@@ -3,7 +3,7 @@
     using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class Comment
+    public class ReviewComment
     {
         [Key]
         public int Id { get; set; }
