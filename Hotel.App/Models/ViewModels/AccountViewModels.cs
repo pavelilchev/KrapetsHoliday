@@ -48,41 +48,40 @@
 
     public class LoginViewModel
     {
-        [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Required(ErrorMessage = "Моля, въведете потребителското си име")]
+        [Display(Name = "Потребителско име")]
+        public string Username { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Моля, въведете паролата си")]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Парола")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Запомни ме")]
         public bool RememberMe { get; set; }
     }
 
     public class RegisterViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Полето имейл е задължително")]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "Имейл")]
         public string Email { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
-        [Display(Name = "Username")]
+        [Required(ErrorMessage = "Потребителското име е задължително")]
+        [StringLength(100, ErrorMessage = "Дължината трябва да е между {0} и {2} символа", MinimumLength = 3)]
+        [Display(Name = "Потребителско име")]
         public string Username { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 1)]
+        [Required(ErrorMessage = "Паролата е задължителна")]
+        [StringLength(100, ErrorMessage = "Дължината трябва да е между {0} и {2} символа", MinimumLength = 1)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Парола")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Потвърди паролата")]
+        [Compare("Password", ErrorMessage = "Паролите не са еднакви")]
         public string ConfirmPassword { get; set; }
     }
 

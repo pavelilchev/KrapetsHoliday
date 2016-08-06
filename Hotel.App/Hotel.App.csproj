@@ -388,10 +388,10 @@
     <Content Include="Views\Appointment\Index.cshtml" />
     <None Include="Views\AboutUs\Index.cshtml" />
     <Content Include="Views\Shared\_Messages.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ReviewComment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Shared\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

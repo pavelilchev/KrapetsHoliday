@@ -1,34 +1,30 @@
 ﻿@model Hotel.Models.Review
 
-@{
-    ViewBag.Title = "Details";
-}
+<h2 class="text-center">Детайли</h2>
 
-<h2>Details</h2>
+<div class="row review-detail-wrapper">
+    
+    <div class="col-md-2 col-sm-3 text-right">Автор:</div>
+    <div class="col-md-10 col-sm-9 text-left">
+        <div class="review-author">@Model.Author.UserName</div>
+    </div>
 
-<div>
-    <h4>Review</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
+    <div class="col-md-2 col-sm-3 text-right">Дата на създаване:</div>
+    <div class="col-md-10 col-sm-9 text-left">
+        <div class="review-date">@Model.CreationDate</div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
+    <div class="col-md-2 col-sm-3 text-right">Рейтинг:</div>
+    <div class="col-md-10 col-sm-9 text-left">
+        <div class="empty-starts text-center"></div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CreationDate)
-        </dt>
+    <div class="col-md-2 col-sm-3 text-right">Съдържание:</div>
+    <div class="col-md-9 col-sm-8  text-left review-body">
+        <div>@Model.Content</div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.CreationDate)
-        </dd>
-
-    </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+<h3 class="col-md-2 col-sm-3 text-right">Коментари</h3>
+@Html.DisplayFor(m => m.Comments)
