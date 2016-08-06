@@ -19,9 +19,20 @@
         }
 
         // GET: Reviews
-        public ActionResult Index()
+        public ActionResult Index(int page = 1, int count = 5)
         {
-            var reviews = this.Data.Reviews.All().Include(r => r.Comments).Include(r => r.Author).ToList();
+            var allReviews = this.Data.Reviews.All();
+            var reviews = allReviews
+                .Include(r => r.Comments)
+                .Include(r => r.Author)
+                .OrderByDescending(r => r.CreationDate)
+                .Skip((page -1) * count)
+                .Take(count)
+                .ToList();
+
+            int reviewsCount = allReviews.Count();
+            this.ViewBag.TotalPages = (reviewsCount + count - 1) / count;
+            this.ViewBag.CurrentPage = page;
 
             var vmReviews = Mapper.Map<IEnumerable<Review>, IEnumerable<ReviewVewModel>>(reviews);
            

@@ -8,6 +8,19 @@
 
 @Html.DisplayForModel()
 
+<ul class="pagination">
+    @for (int page = 1; page <= ViewBag.TotalPages; page++)
+    {
+        string listItemClass = string.Empty;
+        if (page == ViewBag.CurrentPage)
+        {
+            listItemClass = "active";
+        }
+
+        <li class="@listItemClass">@Html.ActionLink(page.ToString(), "Index", "Reviews", routeValues: new { page = page, count = 5 }, htmlAttributes: null)</li>
+    }
+</ul>
+
 <div class="leave-review text-center">
     <a href="/Reviews/Create" class="btn btn-danger col-xs-offset-4 col-sm-4" title="Напишете отзив">Напишете отзив</a>
 </div>
