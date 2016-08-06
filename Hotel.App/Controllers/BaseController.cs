@@ -33,7 +33,7 @@
 
             var reviews = this.Data.Reviews.All();
             int reviewsCount = reviews.Count();
-            double averageRating = reviews.Sum(r => r.Rating) / (double)reviewsCount;
+            double averageRating = Math.Round((reviews.Sum(r => r.Rating) / (double)reviewsCount), 2);
             this.Session["ReviewsCount"] = reviewsCount;
             this.Session["AverageRating"] = averageRating;
         }
