@@ -289,7 +289,6 @@
     <Content Include="Files\Gallery\Yard\thumb\Krapets_Holiday_1d_thumb.jpg" />
     <Content Include="Files\Gallery\Yard\thumb\Krapets_Holiday_1_thumb.jpg" />
     <Content Include="Files\Images\close.png" />
-    <Content Include="Files\Images\empty-star.jpg" />
     <Content Include="Files\Images\facebook-icon.png" />
     <Content Include="Files\Images\google-plus-icon.png" />
     <Content Include="Files\Images\house-home.jpg" />
@@ -298,13 +297,9 @@
     <Content Include="Files\Images\next.png" />
     <Content Include="Files\Images\prev.png" />
     <Content Include="Files\Images\raiting-1star.jpg" />
-    <Content Include="Files\Images\raiting-1star.png" />
     <Content Include="Files\Images\raiting-2star.jpg" />
-    <Content Include="Files\Images\raiting-2star.png" />
     <Content Include="Files\Images\raiting-3star.jpg" />
-    <Content Include="Files\Images\raiting-3star.png" />
     <Content Include="Files\Images\raiting-4star.jpg" />
-    <Content Include="Files\Images\raiting-4star.png" />
     <Content Include="Files\Images\Slideshow\slideshow-birds.jpg" />
     <Content Include="Files\Images\Slideshow\slideshow-houses.jpg" />
     <Content Include="Files\Images\Slideshow\slideshow-see.jpg" />

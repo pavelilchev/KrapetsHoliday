@@ -21,7 +21,7 @@
 
 // Create a review chose rating
 $(document).ready(function () {
-    $("li").hover(function () {
+    $("[data-star]").hover(function () {
         var myClass = $(this).attr("class");
         if (myClass == "creare-review-1star") {
             $(this).parent("ul").css("background", 'url("/Files/Images/raiting-1star.jpg")');
