@@ -22,11 +22,12 @@
                 <input id="setRating" type="hidden" value="5">
                 <div class="col-md-10 creare-review-rating">
                     <ul class="userRating">
-                        <li Value="1" class="creare-review-1star" data-star=""></li>
-                        <li Value="2" class="creare-review-2star" data-star=""></li>
-                        <li Value="3" class="creare-review-3star" data-star=""></li>
-                        <li Value="4" class="creare-review-4star" data-star=""></li>
-                        <li Value="5" class="creare-review-5star" data-star=""></li> 
+                        <li Value="0" data-star="creare-review-0star"></li>
+                        <li Value="1" data-star="creare-review-1star"></li>
+                        <li Value="2" data-star="creare-review-2star"></li>
+                        <li Value="3" data-star="creare-review-3star"></li>
+                        <li Value="4" data-star="creare-review-4star"></li>
+                        <li Value="5" data-star="creare-review-5star"></li>
                     </ul>
                     <span class="narration">Избери звезди</span>
                 </div>
@@ -55,5 +56,5 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/main-script")
+    @Scripts.Render("~/bundles/reviews")
 }

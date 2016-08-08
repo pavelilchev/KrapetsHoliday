@@ -42,6 +42,9 @@
 
             bundles.Add(new StyleBundle("~/Content/lightboxCss").Include(
                        "~/Content/Lightbox/lightbox.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/reviews").Include(
+                    "~/Scripts/reviews.js"));
         }
     }
 }
