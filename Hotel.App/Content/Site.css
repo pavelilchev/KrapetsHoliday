@@ -146,7 +146,7 @@ h1 {
 .empty-starts {
     height: 19px;
     background: url(/Files/Images/stars_sprite_icon.png) no-repeat 0 -25px;
-     background-position-x: center; 
+    background-position-x: center;
 }
 
 .single-review {
@@ -155,7 +155,7 @@ h1 {
     border-bottom: 1px solid #CCC;
 }
 
-.author-info{
+.author-info {
     border-right: 1px solid #CCC;
 }
 
@@ -167,17 +167,43 @@ h1 {
     margin-bottom: 20px;
 }
 
-.review-detail-wrapper .empty-starts {
-    background-position-x: left;
+    .review-detail-wrapper .empty-starts {
+        background-position-x: left;
+    }
+
+    .review-detail-wrapper div {
+        margin-bottom: 5px;
+    }
+
+.userRating {
+    height: 19px;
+    width: 101px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: url(/Files/Images/stars_sprite_icon.png) no-repeat 1px 0;
+    background-position-x: center;
 }
 
-.review-detail-wrapper div{
-    margin-bottom: 5px;
+    .userRating li {
+        float: left;
+        height: 19px;
+        width: 20px;
+    }
+
+     .userRating li:hover {
+       cursor: pointer;
+    }
+
+
+.creare-review-rating {
+    padding-left: 25px;
 }
 /* #endregion Reviews */
 
 /* #region Gallery */
-.gallery img{
+.gallery img {
     margin: 5px;
 }
 /* #endregion Gallery */
@@ -191,7 +217,7 @@ h1 {
 /* #region Default queries */
 @media (max-width: 770px) {
     .header-container-left, .header-container-middle, .header-container-right,
-     .footer-container-middle,.footer-container-right {
+    .footer-container-middle, .footer-container-right {
         text-align: center;
         margin: 0;
     }
