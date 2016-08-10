@@ -206,10 +206,10 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -222,6 +222,11 @@
     <Compile Include="Models\ViewModels\ReviewCommentViewModel.cs" />
     <Compile Include="Models\ViewModels\ReviewVewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -290,17 +295,21 @@
     <Content Include="Files\Gallery\Yard\thumb\Krapets_Holiday_1d_thumb.jpg" />
     <Content Include="Files\Gallery\Yard\thumb\Krapets_Holiday_1_thumb.jpg" />
     <Content Include="Files\Images\close.png" />
+    <Content Include="Files\Images\envelope.png" />
+    <Content Include="Files\Images\facebook-black-icon.png" />
     <Content Include="Files\Images\facebook-icon.png" />
     <Content Include="Files\Images\google-plus-icon.png" />
     <Content Include="Files\Images\house-home.jpg" />
     <Content Include="Files\Images\loading.gif" />
     <Content Include="Files\Images\logo.png" />
     <Content Include="Files\Images\next.png" />
+    <Content Include="Files\Images\phone-icon.png" />
     <Content Include="Files\Images\prev.png" />
     <Content Include="Files\Images\raiting-1star.jpg" />
     <Content Include="Files\Images\raiting-2star.jpg" />
     <Content Include="Files\Images\raiting-3star.jpg" />
     <Content Include="Files\Images\raiting-4star.jpg" />
+    <Content Include="Files\Images\skype-icon.png" />
     <Content Include="Files\Images\Slideshow\slideshow-birds.jpg" />
     <Content Include="Files\Images\Slideshow\slideshow-houses.jpg" />
     <Content Include="Files\Images\Slideshow\slideshow-see.jpg" />
@@ -392,10 +401,11 @@
     <Content Include="Views\Appointment\Details.cshtml" />
     <Content Include="Views\Appointment\Edit.cshtml" />
     <Content Include="Views\Appointment\Index.cshtml" />
-    <None Include="Views\AboutUs\Index.cshtml" />
     <Content Include="Views\Shared\_Messages.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ReviewComment.cshtml" />
     <Content Include="Views\Shared\_ReviewComment.cshtml" />
+    <Content Include="Views\ContactUs\Index.cshtml" />
+    <Content Include="Views\ContactUs\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -415,6 +425,12 @@
       <Project>{40406845-ea79-4587-a26c-37c3eb10ef05}</Project>
       <Name>Hotel.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

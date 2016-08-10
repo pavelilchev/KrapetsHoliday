@@ -273,6 +273,74 @@ h1 {
 }
 /* #endregion Account*/
 
+/* #region ContactUs*/
+.aboutus-wrapper{
+    margin-top:50px;
+}
+
+.contactus-element div{
+    margin-bottom: 10px;
+}
+
+.contactus-element:hover{
+    cursor: pointer;
+}
+
+.aboutus-background {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    transition:all 0.3s linear;
+}
+
+.envelope-background{    
+    background: url('../Files/Images/envelope.png') no-repeat center center;
+}
+
+.phone-background{
+    background: url('../Files/Images/phone-icon.png') no-repeat center center;
+}
+
+.skype-background{
+    background: url('../Files/Images/skype-icon.png') no-repeat center center;
+}
+
+.facebook-background{
+    background: url('../Files/Images/facebook-black-icon.png') no-repeat center center;
+}
+
+.icon-wrapper{    
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #4cb4b8;
+    margin: auto;
+}
+
+.aboutus-background:after{
+    content:"";
+    display:block;
+    position:absolute;
+    border-radius:50%;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    transition:all 0.3s linear;
+     border: 2px solid transparent;
+}
+
+.aboutus-background:hover:after{
+    border: 2px solid #4cb4b8;
+    top:-6px;
+    left:-6px;
+    bottom:-6px;
+    right:-6px;
+}
+
+/* #endregion ContactUs*/
+
 /* #region Default queries */
 @media (max-width: 770px) {
     .header-container-left, .header-container-middle, .header-container-right,
