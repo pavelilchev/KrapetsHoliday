@@ -1,5 +1,7 @@
 ﻿// Chose rating on Create a review 
 $(document).ready(function () {
+    $("#Rating").prop("value", 5);
+
     $("[data-star]").hover(function () {
         var myClass = $(this).attr("data-star");
         if (myClass === "creare-review-1star") {
@@ -17,6 +19,6 @@ $(document).ready(function () {
         }
 
         var raiting = $(this).attr("value");
-        document.getElementById("setRating").setAttribute("value", raiting);
+        $("#Rating").prop("value", raiting);
     });
 });

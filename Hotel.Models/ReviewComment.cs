@@ -9,7 +9,8 @@
         public int Id { get; set; }
 
         [Required]
-        [MinLength(20)]
+        [MinLength(10, ErrorMessage = "Коментарът трябва да е дълъг поне 10 символа")]
+        [DataType(DataType.MultilineText)]
         public string Content { get; set; }
 
         [Required]

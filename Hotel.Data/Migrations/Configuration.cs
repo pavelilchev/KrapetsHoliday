@@ -19,6 +19,7 @@
         {
             this.SeedUsers(context);
             this.SeedReviews(context);
+            this.SeedComments(context);
         }
 
         private void SeedUsers(HotelDbContext context)
@@ -46,7 +47,7 @@
             {
                 var userStore = new UserStore<User>(context);
                 var userManager = new UserManager<User>(userStore);
-                var userToInsert = new User { UserName = "user@gmail.com", Email = "user@gmail.com" };
+                var userToInsert = new User { UserName = "user", Email = "user@gmail.com" };
 
                 userManager.Create(userToInsert, "123456");
             }
@@ -59,12 +60,12 @@
                 return;
             }
 
+            var author = context.Users.FirstOrDefault(u => u.UserName == "user");
             var rnd = new Random();
             for (int i = 0; i < 10; i++)
             {
                 var review = new Review();
                 string content = "Това е един страхотен отзив " + i;
-                var author = context.Users.FirstOrDefault(u => u.UserName == "user@gmail.com");
                 DateTime date = DateTime.Now;
                 int rating = 5 - rnd.Next(4);
 
@@ -73,8 +74,33 @@
                 review.CreationDate = date;
                 review.Rating = rating;
                 review.IsPublished = true;
-
                 context.Reviews.Add(review);
+            }
+
+            context.SaveChanges();
+        }
+
+        private void SeedComments(HotelDbContext context)
+        {
+            if (context.Comments.Any())
+            {
+                return;
+            }
+
+            var reviews = context.Reviews;
+            var author = context.Users.FirstOrDefault(u => u.UserName == "user@gmail.com");
+            foreach (var review in reviews)
+            {
+                for (int k = 0; k < 3; k++)
+                {
+                    var comment = new ReviewComment();
+                    comment.Author = author;
+                    comment.Content = "Коментарът трябва да бъде смислен " + k;
+                    comment.CreationTime = DateTime.Now;
+                    comment.Review = review;
+
+                    context.Comments.Add(comment);
+                }
             }
 
             context.SaveChanges();

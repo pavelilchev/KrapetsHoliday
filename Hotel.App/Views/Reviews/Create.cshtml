@@ -7,10 +7,10 @@
 <h2>Напиши</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>oтзив</h4>
         <hr />
@@ -18,8 +18,8 @@
 
         <div class="form-group">
             <div class="row">
-            @Html.LabelFor(model => model.Rating, "Рейтинг", htmlAttributes: new { @class = "control-label col-md-2" })
-                <input id="setRating" type="hidden" value="5">
+                @Html.LabelFor(model => model.Rating, "Рейтинг", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.HiddenFor(model => model.Rating, new { htmlAttributes = new { @class = "form-control" } })
                 <div class="col-md-10 creare-review-rating">
                     <ul class="userRating">
                         <li Value="0" data-star="creare-review-0star"></li>
@@ -35,10 +35,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Content, "Съдържание", htmlAttributes: new {@class = "control-label col-md-2"})
+            @Html.LabelFor(model => model.Content, "Съдържание", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Content, new {htmlAttributes = new {@class = "form-control"}})
-                @Html.ValidationMessageFor(model => model.Content, "", new {@class = "text-danger"})
+                @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
             </div>
         </div>
 

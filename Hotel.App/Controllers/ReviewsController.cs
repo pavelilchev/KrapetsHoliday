@@ -26,7 +26,7 @@
                 .Include(r => r.Comments)
                 .Include(r => r.Author)
                 .OrderByDescending(r => r.CreationDate)
-                .Skip((page -1) * count)
+                .Skip((page - 1) * count)
                 .Take(count)
                 .ToList();
 
@@ -35,7 +35,7 @@
             this.ViewBag.CurrentPage = page;
 
             var vmReviews = Mapper.Map<IEnumerable<Review>, IEnumerable<ReviewVewModel>>(reviews);
-           
+
             return this.View(vmReviews);
         }
 
@@ -69,13 +69,12 @@
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Content")] Review review)
+        public ActionResult Create([Bind(Include = "Id,Content,Rating")] Review review)
         {
             if (this.ModelState.IsValid)
             {
                 review.Author = this.UserProfile;
                 review.CreationDate = DateTime.Now;
-                review.Rating = 5;
 
                 this.Data.Reviews.Add(review);
                 this.Data.SaveChanges();
@@ -95,7 +94,7 @@
             Review review = this.Data.Reviews.Find(id);
             if (review == null)
             {
-                return this.HttpNotFound();
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             return this.View(review);
         }
@@ -143,6 +142,30 @@
             this.Data.SaveChanges();
 
             return this.RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateComment([Bind(Include = "Content, ReviewId")] ReviewCommentViewModel comment)
+        {
+            var review = this.Data.Reviews.Find(comment.ReviewId);
+            var reviewComment = new ReviewComment();
+
+            if (this.ModelState.IsValid)
+            {
+                reviewComment.Content = comment.Content;
+                reviewComment.Author = this.UserProfile;
+                reviewComment.CreationTime = DateTime.Now;
+                reviewComment.Review = review;
+
+                this.Data.Comments.Add(reviewComment);
+                this.Data.SaveChanges();
+
+                return this.RedirectToAction("/Details/" + comment.ReviewId);
+            }
+
+            return this.View("Details", review);
         }
     }
 }
