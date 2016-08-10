@@ -85,7 +85,25 @@ html, body {
 /* endregion slideshow*/
 
 /* region footer*/
-.footer-container-left img:hover {
+.facebook-icon{
+    background: url('../Files/Images/facebook-icon.png') no-repeat center center;
+}
+
+.google-icon{
+     background: url('../Files/Images/google-plus-icon.png') no-repeat center center;
+}
+
+.facebook-icon, .google-icon {
+    
+    height: 40px;
+    width: 40px;
+    border: 1px solid #FFF;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+}
+
+.facebook-icon:hover, .google-icon:hover {
     -ms-transform: rotate(360deg); /* IE 9 */
     -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
     transform: rotate(360deg);
@@ -93,7 +111,7 @@ html, body {
 }
 
 .footer-container-left {
-    margin: 50px 0 10px;
+    margin: 30px 0 10px;
 }
 
 .footer-container-right {
