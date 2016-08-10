@@ -4,7 +4,7 @@
     <div class="col-sm-offset-2 col-md-2 col-sm-3 text-center author-info">
         <div class="review-author">@Model.Author.UserName</div>
         <div class="review-date">@Model.CreationDate</div>
-        <div class="empty-starts text-center"></div>
+        <div class="review-raiting review-@(Model.Rating)star"></div>
     </div>
 
     <div class="col-md-8 col-sm-7  text-left review-body">
