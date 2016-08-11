@@ -1,11 +1,10 @@
 ﻿namespace Hotel.App.Controllers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
     using System.Web.Mvc;
     using Hotel.Data.UnitOfWork;
+    using Models.ViewModels;
+    using AutoMapper;
+    using Hotel.Models;
 
     public class ContactUsController : BaseController
     {
@@ -23,23 +22,26 @@
         // GET: ContactUs/Create
         public ActionResult Create()
         {
-            return View();
+            return PartialView("_Email", new EmailViewModel());
         }
 
-        // POST: ContactUs/Create
+        // POST: ContactUs/Create       
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(EmailViewModel email)
         {
-            try
+            if (this.ModelState.IsValid)
             {
-                // TODO: Add insert logic here
+                this.TempData["message"] = "Вашето писмо беше изпратено успешно!";
+                var dataEmail = Mapper.Map<Email>(email);
 
-                return RedirectToAction("Index");
+                this.Data.Emails.Add(dataEmail);
+                this.Data.SaveChanges();
+
+                return View("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View("_Email", email);
         }
     }
 }

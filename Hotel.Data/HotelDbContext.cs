@@ -17,6 +17,8 @@
 
         public DbSet<Appointment> Appointments { get; set; }
 
+        public DbSet<Email> Emails { get; set; }
+
         public static HotelDbContext Create()
         {
             return new HotelDbContext();

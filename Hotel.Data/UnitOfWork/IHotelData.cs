@@ -13,6 +13,8 @@
 
         IRepository<Appointment> Appointments { get; }
 
+        IRepository<Email> Emails { get; }
+
         int SaveChanges();
     }
 }

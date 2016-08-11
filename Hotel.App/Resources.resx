@@ -117,10 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Email" xml:space="preserve">
+    <value>pavel@kukui.com</value>
+  </data>
   <data name="FacebookUrl" xml:space="preserve">
     <value>https://www.facebook.com/</value>
   </data>
   <data name="GooglePlusUrl" xml:space="preserve">
     <value>https://plus.google.com/</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>0888888888</value>
+  </data>
+  <data name="Skype" xml:space="preserve">
+    <value>pavel_ilchev</value>
   </data>
 </root>

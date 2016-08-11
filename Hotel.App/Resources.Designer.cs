@@ -61,6 +61,15 @@ namespace Hotel.App {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to pavel@kukui.com.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to https://www.facebook.com/.
         /// </summary>
         public static string FacebookUrl {
@@ -75,6 +84,24 @@ namespace Hotel.App {
         public static string GooglePlusUrl {
             get {
                 return ResourceManager.GetString("GooglePlusUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0888888888.
+        /// </summary>
+        public static string PhoneNumber {
+            get {
+                return ResourceManager.GetString("PhoneNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pavel_ilchev.
+        /// </summary>
+        public static string Skype {
+            get {
+                return ResourceManager.GetString("Skype", resourceCulture);
             }
         }
     }

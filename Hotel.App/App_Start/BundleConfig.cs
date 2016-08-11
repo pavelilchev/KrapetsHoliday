@@ -45,6 +45,9 @@
 
             bundles.Add(new ScriptBundle("~/bundles/reviews").Include(
                     "~/Scripts/reviews.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/contactus").Include(
+                   "~/Scripts/contactus.js"));
         }
     }
 }

@@ -55,6 +55,14 @@
             }
         }
 
+        public IRepository<Email> Emails
+        {
+            get
+            {
+                return this.GetRepository<Email>();
+            }
+        }
+
         public int SaveChanges()
         {
             return this.dbContext.SaveChanges();

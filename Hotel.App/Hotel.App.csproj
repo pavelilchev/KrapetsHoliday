@@ -218,6 +218,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModels\AccountViewModels.cs" />
+    <Compile Include="Models\ViewModels\EmailViewModel.cs" />
     <Compile Include="Models\ViewModels\ManageViewModels.cs" />
     <Compile Include="Models\ViewModels\ReviewCommentViewModel.cs" />
     <Compile Include="Models\ViewModels\ReviewVewModel.cs" />
@@ -309,6 +310,7 @@
     <Content Include="Files\Images\raiting-2star.jpg" />
     <Content Include="Files\Images\raiting-3star.jpg" />
     <Content Include="Files\Images\raiting-4star.jpg" />
+    <Content Include="Files\Images\red-x-icon.png" />
     <Content Include="Files\Images\skype-icon.png" />
     <Content Include="Files\Images\Slideshow\slideshow-birds.jpg" />
     <Content Include="Files\Images\Slideshow\slideshow-houses.jpg" />
@@ -332,6 +334,7 @@
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\contactus.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
     <Content Include="Scripts\jquery-3.1.0.min.js" />
     <Content Include="Scripts\jquery-3.1.0.slim.js" />
@@ -405,7 +408,7 @@
     <Content Include="Views\Shared\DisplayTemplates\ReviewComment.cshtml" />
     <Content Include="Views\Shared\_ReviewComment.cshtml" />
     <Content Include="Views\ContactUs\Index.cshtml" />
-    <Content Include="Views\ContactUs\Create.cshtml" />
+    <Content Include="Views\Shared\_Email.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

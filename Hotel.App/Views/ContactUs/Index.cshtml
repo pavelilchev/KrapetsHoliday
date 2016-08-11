@@ -1,24 +1,24 @@
 ﻿<h1 class="text-center">Свържете се с нас</h1>
 
-<div class="aboutus-wrapper">
+<div class="aboutus-wrapper row">
     <div class="contactus-element col-sm-3">
-        <a href="#">
+        <a href="javascript:void(0);" data-url="@Url.Action("Create", "ContactUs")" class="create-email">
             <div class="icon-wrapper"><div class="aboutus-background envelope-background"></div></div>
             <div class="text-center">ИМЕЙЛ</div>
-            <div class="text-center">holiday@gmail.com</div>
+            <div class="text-center">@Resources.Email</div>
         </a>
     </div>
 
     <div class="contactus-element col-sm-3">
-        <a href="tel:0888888888">
+        <a href="tel:@Resources.PhoneNumber">
             <div class="icon-wrapper"><div class="aboutus-background phone-background"></div></div>
             <div class="text-center">ТЕЛЕФОН</div>
-            <div class="text-center">0888 888 888</div>
+            <div class="text-center">@Resources.PhoneNumber</div>
         </a>
     </div>
 
     <div class="contactus-element col-sm-3">
-        <a href="#">
+        <a href="skype:@Resources.Skype?call">
             <div class="icon-wrapper"><div class="aboutus-background skype-background"></div></div>
             <div class="text-center">СКАЙП</div>
             <div class="text-center">Обади ни се</div>
@@ -26,10 +26,39 @@
     </div>
 
     <div class="contactus-element col-sm-3">
-        <a href="@Resources.FacebookUrl">
+        <a href="@Resources.FacebookUrl" target="_blank">
             <div class="icon-wrapper"><div class="aboutus-background facebook-background"></div></div>
             <div class="text-center">ФЕЙСБУК</div>
             <div class="text-center">Харесай ни</div>
         </a>
     </div>
 </div>
+
+<div class="email-form"></div>
+
+<div class="contactus-google-map">
+    <h3 class="text-center">Ние сме тук</h3>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var myLatLng = { lat: 43.6267589, lng: 28.5639773 };
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: myLatLng,
+                scrollwheel: false
+            });
+
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Крапец Холидей'
+            });
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCoZHn4cE1JX7cTy1XfhK5h4rxUcI4b8c&callback=initMap">
+    </script>
+</div>
+
+@Scripts.Render("~/bundles/contactus")

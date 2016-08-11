@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Крапетц Холидей</title>
+    <title>@ViewBag.Title Крапетц Холидей</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
@@ -32,7 +32,7 @@
                     <div class="header-container-right col-sm-4 col-md-4  text-right">
                         <div class="header-location">
                             <p>село Крапец</p>
-                            <a href="tel:0888888888">тел: 0888 888 888</a>
+                            <a href="tel:@Resources.PhoneNumber">тел: @Resources.PhoneNumber</a>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                     </div>
                     <div class="footer-container-right col-sm-4 col-md-4 text-right">
                         <p>село Крапец</p>
-                        <a href="tel:0888888888">тел: 0888 888 888</a>
+                        <a href="tel:@Resources.PhoneNumber">тел: @Resources.PhoneNumber</a>
                     </div>
                 </div>
             </div>
