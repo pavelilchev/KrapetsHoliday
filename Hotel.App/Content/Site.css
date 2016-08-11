@@ -3,6 +3,18 @@
     src: url(/fonts/MIROSLN.ttf) format('truetype');
 }
 
+.global-message {
+    position: relative;
+    top: 100px;
+    margin: 0 auto;
+}
+
+.global-message a{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 /* #region footer pusher*/
 html, body {
     height: 100%;
@@ -119,6 +131,10 @@ html, body {
 
 .footer-section-bottom {
     padding: 10px;
+}
+
+.footer-author {
+    display: inline-block;
 }
 
 .bottom {
@@ -359,7 +375,7 @@ h1 {
 
 .email-form-wrapper {
     position: fixed;
-    top: 100px;
+    top: 200px;
     right: 0;
     left: 0;
     margin: 0 auto;
@@ -387,7 +403,7 @@ h1 {
 /* #region Default queries */
 @media (max-width: 770px) {
     .header-container-left, .header-container-middle, .header-container-right,
-    .footer-container-middle, .footer-container-right {
+    .footer-container-middle, .footer-container-right, .footer-section-bottom {
         text-align: center;
         margin: 0;
     }

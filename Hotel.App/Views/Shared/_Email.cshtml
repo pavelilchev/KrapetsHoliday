@@ -1,60 +1,64 @@
 ﻿@model Hotel.App.Models.ViewModels.EmailViewModel
 
-<div class="email-form-wrapper">
+<div class="email-form-wrapper" id="emailAjaxForm">
     <div class="close-email" data-close="" onclick="closeEmailForm()"></div>
-   @using (Html.BeginForm("Create", "ContactUs", FormMethod.Post))
-   {
-    @Html.AntiForgeryToken()
+    @using (Ajax.BeginForm("Create", "ContactUs", new AjaxOptions()
+    {
+        UpdateTargetId = "emailAjaxForm",
+        HttpMethod = "Post"
+    }))
+    {
+        @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-       
-        <div class="form-group">
-            @Html.LabelFor(model => model.FirstName, "Име", htmlAttributes: new { @class = "col-xs-12" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FirstName, "Име", htmlAttributes: new {@class = "col-xs-12"})
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.FirstName, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LastName, "Фамилия", htmlAttributes: new {@class = "col-xs-12"})
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.LastName, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.LastName, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PhoneNumber, "Телефон", htmlAttributes: new {@class = "col-xs-12"})
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.PhoneNumber, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.EmailAddress, "Имейл", htmlAttributes: new {@class = "col-xs-12"})
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.EmailAddress, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.EmailAddress, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Content, "Съдържание", htmlAttributes: new {@class = "col-xs-12"})
+                <div class="col-md-10 email-content">
+                    @Html.TextAreaFor(model => model.Content, new {htmlAttributes = new {@class = "form-control"}, cols = 55, @rows = 5})
+                    @Html.ValidationMessageFor(model => model.Content, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="submit" value="Изпрати" class="btn btn-default"/>
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.LastName, "Фамилия", htmlAttributes: new { @class = "col-xs-12" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PhoneNumber, "Телефон", htmlAttributes: new { @class = "col-xs-12" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EmailAddress, "Имейл", htmlAttributes: new { @class = "col-xs-12" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Content, "Съдържание", htmlAttributes: new { @class = "col-xs-12" })
-            <div class="col-md-10 email-content">
-                @Html.TextAreaFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" }, cols = 55, @rows = 5 })
-                @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-10">
-                <input type="submit" value="Изпрати" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-   }
-
+    }
 </div>
+@Scripts.Render("~/bundles/ajax")

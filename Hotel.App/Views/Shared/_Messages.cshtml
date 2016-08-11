@@ -1,7 +1,7 @@
 ﻿@if (TempData.ContainsKey("message"))
 {
-    <div class="alert alert-success">
+    <div class="col-sm-6 alert alert-success global-message">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong>Success!</strong> @TempData["message"]
+        <strong>@TempData["message"]</strong>
     </div>
 }

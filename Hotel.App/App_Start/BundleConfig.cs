@@ -48,6 +48,9 @@
 
             bundles.Add(new ScriptBundle("~/bundles/contactus").Include(
                    "~/Scripts/contactus.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/ajax").Include(
+                  "~/Scripts/jquery.unobtrusive-ajax.min.js"));
         }
     }
 }

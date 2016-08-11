@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using Hotel.Data;
-using Hotel.Data.UnitOfWork;
-using Hotel.Models;
-
-namespace Hotel.App.Controllers
+﻿namespace Hotel.App.Controllers
 {
+    using System.Linq;
+    using System.Net;
+    using System.Web.Mvc;
+    using Hotel.Data.UnitOfWork;
+    using Hotel.Models;
+
     public class AppointmentController : BaseController
     {
         protected AppointmentController(IHotelData data) : base(data)
@@ -21,7 +15,7 @@ namespace Hotel.App.Controllers
         // GET: Appointments
         public ActionResult Index()
         {
-            return View(this.Data.Appointments.All().ToList());
+            return this.View(this.Data.Appointments.All().ToList());
         }
 
         // GET: Appointments/Details/5
@@ -34,15 +28,15 @@ namespace Hotel.App.Controllers
             Appointment appointment = this.Data.Appointments.Find(id);
             if (appointment == null)
             {
-                return HttpNotFound();
+                return this.HttpNotFound();
             }
-            return View(appointment);
+            return this.View(appointment);
         }
 
         // GET: Appointments/Create
         public ActionResult Create()
         {
-            return View();
+            return this.View();
         }
 
         // POST: Appointments/Create
@@ -52,14 +46,14 @@ namespace Hotel.App.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id")] Appointment appointment)
         {
-            if (ModelState.IsValid)
+            if (this.ModelState.IsValid)
             {
                 this.Data.Appointments.Add(appointment);
                 this.Data.SaveChanges();
-                return RedirectToAction("Index");
+                return this.RedirectToAction("Index");
             }
 
-            return View(appointment);
+            return this.View(appointment);
         }
 
         // GET: Appointments/Edit/5
@@ -72,9 +66,9 @@ namespace Hotel.App.Controllers
             Appointment appointment = this.Data.Appointments.Find(id);
             if (appointment == null)
             {
-                return HttpNotFound();
+                return this.HttpNotFound();
             }
-            return View(appointment);
+            return this.View(appointment);
         }
 
         // POST: Appointments/Edit/5
@@ -84,13 +78,13 @@ namespace Hotel.App.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id")] Appointment appointment)
         {
-            if (ModelState.IsValid)
+            if (this.ModelState.IsValid)
             {
                 this.Data.Appointments.Update(appointment);
                 this.Data.SaveChanges();
-                return RedirectToAction("Index");
+                return this.RedirectToAction("Index");
             }
-            return View(appointment);
+            return this.View(appointment);
         }
 
         // GET: Appointments/Delete/5
@@ -103,9 +97,9 @@ namespace Hotel.App.Controllers
             Appointment appointment = this.Data.Appointments.Find(id);
             if (appointment == null)
             {
-                return HttpNotFound();
+                return this.HttpNotFound();
             }
-            return View(appointment);
+            return this.View(appointment);
         }
 
         // POST: Appointments/Delete/5
@@ -116,7 +110,7 @@ namespace Hotel.App.Controllers
             Appointment appointment = this.Data.Appointments.Find(id);
             this.Data.Appointments.Remove(appointment);
             this.Data.SaveChanges();
-            return RedirectToAction("Index");
+            return this.RedirectToAction("Index");
         }
     }
 }

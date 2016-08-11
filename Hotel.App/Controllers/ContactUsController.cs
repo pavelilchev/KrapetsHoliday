@@ -1,7 +1,7 @@
 ﻿namespace Hotel.App.Controllers
 {
     using System.Web.Mvc;
-    using Hotel.Data.UnitOfWork;
+    using Data.UnitOfWork;
     using Models.ViewModels;
     using AutoMapper;
     using Hotel.Models;
@@ -16,13 +16,13 @@
         // GET: ContactUs
         public ActionResult Index()
         {
-            return View();
+            return this.View();
         }        
 
         // GET: ContactUs/Create
         public ActionResult Create()
         {
-            return PartialView("_Email", new EmailViewModel());
+            return this.PartialView("_Email", new EmailViewModel());
         }
 
         // POST: ContactUs/Create       
@@ -38,10 +38,10 @@
                 this.Data.Emails.Add(dataEmail);
                 this.Data.SaveChanges();
 
-                return View("Index");
+                return this.JavaScript("closeEmailForm()");
             }
 
-            return View("_Email", email);
+            return this.PartialView("_Email", email);
         }
     }
 }
