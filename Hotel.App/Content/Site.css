@@ -4,9 +4,8 @@
 }
 
 .global-message {
-    position: relative;
-    top: 100px;
-    margin: 0 auto;
+    text-align: center;
+    display: block;
 }
 
 .global-message a{
@@ -397,6 +396,11 @@ h1 {
 
 .email-content > *{
     display:block;
+}
+
+.success-email-send {
+    text-align: center;
+    display: none;
 }
 /* #endregion ContactUs*/
 

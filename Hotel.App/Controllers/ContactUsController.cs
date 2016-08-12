@@ -32,13 +32,11 @@
         {
             if (this.ModelState.IsValid)
             {
-                this.TempData["message"] = "Вашето писмо беше изпратено успешно!";
                 var dataEmail = Mapper.Map<Email>(email);
 
                 this.Data.Emails.Add(dataEmail);
                 this.Data.SaveChanges();
-
-                return this.JavaScript("closeEmailForm()");
+                return this.JavaScript("sendEmailSuccessfully()");
             }
 
             return this.PartialView("_Email", email);

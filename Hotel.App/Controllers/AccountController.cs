@@ -78,6 +78,7 @@
             switch (result)
             {
                 case SignInStatus.Success:
+                    this.TempData["message"] = "Добре дошли, влязохте успешно!";
                     return this.RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return this.View("Lockout");
