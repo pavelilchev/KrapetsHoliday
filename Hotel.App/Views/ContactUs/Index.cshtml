@@ -1,4 +1,5 @@
-﻿<h1 class="text-center">Свържете се с нас</h1>
+﻿@using Hotel.App.Utils
+<h1 class="text-center">Свържете се с нас</h1>
 
 <div class="aboutus-wrapper row">
     <div class="contactus-element col-sm-3">
@@ -13,7 +14,7 @@
         <a href="tel:@Resources.PhoneNumber">
             <div class="icon-wrapper"><div class="aboutus-background phone-background"></div></div>
             <div class="text-center">ТЕЛЕФОН</div>
-            <div class="text-center">@Resources.PhoneNumber</div>
+            <div class="text-center">@Resources.PhoneNumber.BeautifyPhoneNumber()</div>
         </a>
     </div>
 

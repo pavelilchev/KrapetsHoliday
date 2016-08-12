@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Hotel.App.Utils
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -32,7 +33,7 @@
                     <div class="header-container-right col-sm-4 col-md-4  text-right">
                         <div class="header-location">
                             <p>село Крапец</p>
-                            <a href="tel:@Resources.PhoneNumber">тел: @Resources.PhoneNumber</a>
+                            <a href="tel:@Resources.PhoneNumber">тел: @Resources.PhoneNumber.BeautifyPhoneNumber()</a>
                         </div>
                     </div>
                 </div>
@@ -87,7 +88,7 @@
                     </div>
                     <div class="footer-container-right col-sm-4 col-md-4 text-right">
                         <p>село Крапец</p>
-                        <a href="tel:@Resources.PhoneNumber">тел: @Resources.PhoneNumber</a>
+                        <a href="tel:@Resources.PhoneNumber">тел: @Resources.PhoneNumber.BeautifyPhoneNumber()</a>
                     </div>
                 </div>
             </div>
