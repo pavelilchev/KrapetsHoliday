@@ -61,7 +61,7 @@ namespace Hotel.App {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to pavel@kukui.com.
+        ///   Looks up a localized string similar to pavel_ilchev@abv.bg.
         /// </summary>
         public static string Email {
             get {

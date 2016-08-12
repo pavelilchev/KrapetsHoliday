@@ -1,5 +1,8 @@
 ﻿namespace Hotel.App.Controllers
 {
+    using System.Net;
+    using System.Net.Mail;
+    using System.Threading.Tasks;
     using System.Web.Mvc;
     using Data.UnitOfWork;
     using Models.ViewModels;
@@ -22,13 +25,22 @@
         // GET: ContactUs/Create
         public ActionResult Create()
         {
-            return this.PartialView("_Email", new EmailViewModel());
+            string currentUserUsername = null;
+            string currentUserEmail = null;
+            
+            if (this.UserProfile != null)
+            {
+                currentUserEmail = this.UserProfile.Email;
+                currentUserUsername = this.UserProfile.UserName;
+            }
+
+            return this.PartialView("_Email", new EmailViewModel {Name = currentUserUsername, EmailAddress = currentUserEmail});
         }
 
         // POST: ContactUs/Create       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(EmailViewModel email)
+        public async Task<ActionResult> Create(EmailViewModel email)
         {
             if (this.ModelState.IsValid)
             {
@@ -36,6 +48,18 @@
 
                 this.Data.Emails.Add(dataEmail);
                 this.Data.SaveChanges();
+
+                var message = new MailMessage();
+                message.To.Add(new MailAddress(Resources.Email));
+                message.Subject = "Имейл изпратен от контактната форма на Крапетц Холидей";
+                message.Body = email.Content;
+                message.IsBodyHtml = true;
+
+                using (var smtp = new SmtpClient())
+                {
+                    await smtp.SendMailAsync(message);
+                }
+
                 return this.JavaScript("sendEmailSuccessfully()");
             }
 
