@@ -1,27 +1,79 @@
-﻿@model IEnumerable<Hotel.Models.Appointment>
+﻿@model Hotel.App.Models.ViewModels.AppointmentViewModel
 
-@{
-    ViewBag.Title = "Index";
+<h1 class="text-left">Резервация</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal appointment-form">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <h3 class="appointment-section">Лична информация</h3>
+        <div class="form-group">
+            <div class="col-sm-6">
+                @Html.LabelFor(model => model.FirstName, "Име", htmlAttributes: new { @class = "control-label col-xs-12" })
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-sm-6">
+                @Html.LabelFor(model => model.LastName, "Фамилия", htmlAttributes: new { @class = "control-label col-xs-12" })
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-6">
+                @Html.LabelFor(model => model.Email, "Имейл", htmlAttributes: new { @class = "control-label col-xs-12" })
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-sm-6">
+                @Html.LabelFor(model => model.Phone, "Телефон", htmlAttributes: new { @class = "control-label col-xs-12" })
+                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <h3 class="appointment-section">Информация за резервацията</h3>
+        <div class="form-group appointment-info">
+            <div class="col-md-5">
+                @Html.LabelFor(model => model.StartDtae, "Начална дата", htmlAttributes: new { @class = "control-label col-xs-12" })
+                @Html.EditorFor(model => model.StartDtae, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.StartDtae, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.HosesCount, "Брой къщи", htmlAttributes: new { @class = "control-label col-xs-12" })
+                @Html.DropDownListFor(m => m.HosesCount,
+                    new List<SelectListItem>
+                    {
+                       new SelectListItem { Value = "1" , Text = "1", Selected=true },
+                       new SelectListItem { Value = "2" , Text = "2" },
+                       new SelectListItem { Value = "3" , Text = "3" },
+                       new SelectListItem { Value = "4" , Text = "4"}
+                    },
+                   new { @class = "form-control col-xs-12" })
+                @Html.ValidationMessageFor(model => model.HosesCount, "", new { @class = "text-danger" })
+            </div>
+
+
+            <div class="col-md-5">
+                @Html.LabelFor(model => model.EndDate, "Крайна дата", htmlAttributes: new { @class = "control-label col-xs-12" })
+                @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+        <div class="form-group submit-appointment">
+            <div class="col-sm-6 col-md-4 col-lg-2">
+                <input type="submit" value="Резервирай" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>

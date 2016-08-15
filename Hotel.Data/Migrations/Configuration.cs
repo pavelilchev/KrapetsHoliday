@@ -88,7 +88,7 @@
             }
 
             var reviews = context.Reviews;
-            var author = context.Users.FirstOrDefault(u => u.UserName == "user@gmail.com");
+            var author = context.Users.FirstOrDefault(u => u.Email == "user@gmail.com");
             foreach (var review in reviews)
             {
                 for (int k = 0; k < 3; k++)

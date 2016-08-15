@@ -404,6 +404,37 @@ h1 {
 }
 /* #endregion ContactUs*/
 
+/* #region Appointment*/
+.appointment-form{
+    margin-top: 50px;
+}
+
+.appointment-section{
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #73c2c8;
+}
+
+.appointment-form .control-label{
+    text-align: left;
+    margin-top: 5px;
+    padding-left:0;
+}
+
+.appointment-form .form-group{
+    padding-bottom: 30px;
+}
+
+.submit-appointment .btn{
+    width: 100%;
+    display: block;
+}
+
+.appointment-form .appointment-section:nth-child(2){
+    margin-top:70px;
+}
+/* #endregion Appointment*/
+
 /* #region Default queries */
 @media (max-width: 770px) {
     .header-container-left, .header-container-middle, .header-container-right,

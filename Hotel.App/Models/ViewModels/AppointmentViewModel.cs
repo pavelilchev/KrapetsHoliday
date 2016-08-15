@@ -1,13 +1,10 @@
-﻿namespace Hotel.Models
+﻿namespace Hotel.App.Models.ViewModels
 {
     using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class Appointment
+    public class AppointmentViewModel
     {
-        [Key]
-        public int Id { get; set; }
-
         [Required(ErrorMessage = "Моля, въведете име")]
         [MinLength(3, ErrorMessage = "Името не може да е по-късо от 3 символа"), MaxLength(50, ErrorMessage = "Името не може да е по-дълго от 50 символа")]
         public string FirstName { get; set; }
@@ -37,8 +34,5 @@
         public DateTime EndDate { get; set; }
 
         public string Comment { get; set; }
-
-        [Required]
-        public DateTime CreationTime { get; set; }
     }
 }
