@@ -40,14 +40,14 @@
 
         <h3 class="appointment-section">Информация за резервацията</h3>
         <div class="form-group appointment-info">
-            <div class="col-md-5">
+            <div class="col-md-4">
                 @Html.LabelFor(model => model.StartDtae, "Начална дата", htmlAttributes: new { @class = "control-label col-xs-12" })
-                @Html.EditorFor(model => model.StartDtae, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.StartDtae, new { htmlAttributes = new { @class = "form-control", id="startDate" } })
                 @Html.ValidationMessageFor(model => model.StartDtae, "", new { @class = "text-danger" })
 
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-4">
                 @Html.LabelFor(model => model.HosesCount, "Брой къщи", htmlAttributes: new { @class = "control-label col-xs-12" })
                 @Html.DropDownListFor(m => m.HosesCount,
                     new List<SelectListItem>
@@ -62,18 +62,23 @@
             </div>
 
 
-            <div class="col-md-5">
+            <div class="col-md-4">
                 @Html.LabelFor(model => model.EndDate, "Крайна дата", htmlAttributes: new { @class = "control-label col-xs-12" })
-                @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control", id = "endDate" } })
                 @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
 
             </div>
         </div>
 
+        <div class="success-email-send alert alert-success col-sm-offset-3 col-sm-6">Вашата резервация беше изпатена успешно!</div>
+
         <div class="form-group submit-appointment">
-            <div class="col-sm-6 col-md-4 col-lg-2">
-                <input type="submit" value="Резервирай" class="btn btn-primary" />
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <input id="appointment-sbm" type="submit" value="Резервирай" class="btn btn-primary"  disabled="@ViewBag.IsDisabled"/>
             </div>
         </div>
     </div>
 }
+
+@Styles.Render("~/Content/UI")
+@Scripts.Render("~/bundles/UI")

@@ -407,6 +407,7 @@ h1 {
 /* #region Appointment*/
 .appointment-form{
     margin-top: 50px;
+    max-width:640px;
 }
 
 .appointment-section{

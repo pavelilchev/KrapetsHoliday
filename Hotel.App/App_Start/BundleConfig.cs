@@ -51,6 +51,15 @@
 
             bundles.Add(new ScriptBundle("~/bundles/ajax").Include(
                   "~/Scripts/jquery.unobtrusive-ajax.min.js"));
+            
+            bundles.Add(new StyleBundle("~/Content/UI").Include(
+                       "~/Content/jQueryUI/jquery-ui.min.css",
+                       "~/Content/jQueryUI/jquery-ui.structure.min.css",
+                       "~/Content/jQueryUI/jquery-ui.theme.min.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/UI").Include(
+                 "~/Scripts/jQueryUI/jquery-ui.min.js",
+                 "~/Scripts/jQueryUI/appointment.js"));
         }
     }
 }

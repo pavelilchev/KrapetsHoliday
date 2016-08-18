@@ -13,6 +13,7 @@
         [MinLength(3, ErrorMessage = "Фамилията не може да е по-къса от 3 символа"), MaxLength(50, ErrorMessage = "Фамилията не може да е по-дълга от 50 символа")]
         public string LastName { get; set; }
 
+        [Required(ErrorMessage = "Моля, въведете имейл")]
         [EmailAddress(ErrorMessage = "Моля, въведете валиден имейл")]
         public string Email { get; set; }
 
@@ -24,12 +25,10 @@
         public int HosesCount { get; set; }
 
         [Required(ErrorMessage = "Моля, изберете начална дата")]
-        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime StartDtae { get; set; }
 
         [Required(ErrorMessage = "Моля, изберете крайна дата")]
-        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime EndDate { get; set; }
 
