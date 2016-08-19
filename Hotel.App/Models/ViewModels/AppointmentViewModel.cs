@@ -18,6 +18,7 @@
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Моля, въведете телефон")]
+        [RegularExpression("([\\d ]+)", ErrorMessage = "Моля, въведете валиден телефонен номер /само цифри/")]
         public string Phone { get; set; }
 
         [Required(ErrorMessage = "Моля, изберете брой")]

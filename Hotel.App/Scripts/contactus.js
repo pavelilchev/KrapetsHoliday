@@ -2,6 +2,11 @@
     $("[data-url]").on("click", function () {
         $('.email-form').load($(this).data("url"));
     });
+
+    var height = $(window).height();
+    if (height < 680) {
+        $(".email-form-wrapper").css({"position":"absolute", "top":"20px"});
+    }
 });
 
 
