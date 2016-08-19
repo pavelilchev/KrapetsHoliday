@@ -3,10 +3,7 @@
         $('.email-form').load($(this).data("url"));
     });
 
-    var height = $(window).height();
-    if (height < 680) {
-        $(".email-form-wrapper").css({"position":"absolute", "top":"20px"});
-    }
+    resizeContactForm();
 });
 
 
@@ -19,3 +16,14 @@ function sendEmailSuccessfully() {
     $(".success-email-send").show();
     $('.success-email-send').delay(3000).fadeOut('slow');
 }
+
+function resizeContactForm() {
+    var height = $(window).height();
+    if (height < 680) {
+        $(".email-form-wrapper").css({ "position": "absolute", "top": "20px" });
+    } else {
+        $(".email-form-wrapper").css({ "position": "fixed", "top": "200px" });
+    }
+}
+
+$(window).resize(resizeContactForm);
