@@ -436,6 +436,16 @@ h1 {
 }
 /* #endregion Appointment*/
 
+/* region Admin panel*/
+.appointment-form .form-group {
+    padding-bottom: 5px;
+}
+
+.appointment-form .form-group .btn{
+    margin-top: 11px;
+}
+/* endregion Admin panel*/
+
 /* #region Default queries */
 @media (max-width: 770px) {
     .header-container-left, .header-container-middle, .header-container-right,

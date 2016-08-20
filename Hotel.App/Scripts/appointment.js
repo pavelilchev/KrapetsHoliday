@@ -20,6 +20,9 @@ $(function () {
 });
 
 $(function () {
+
+    var date = new Date();
+    $("#startDate").datepicker("option", "minDate", date);
     $("#startDate").datepicker();
     $("#endDate").datepicker();
 });

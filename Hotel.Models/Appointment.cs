@@ -41,5 +41,7 @@
 
         [Required]
         public DateTime CreationTime { get; set; }
+
+        public bool IsApproved { get; set; }
     }
 }

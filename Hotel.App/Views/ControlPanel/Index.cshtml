@@ -1,0 +1,60 @@
+﻿@model Hotel.App.Models.ViewModels.ControlPanelViewModel
+
+<h1 class="text-left">Контролен панел</h1>
+
+@using (Html.BeginForm("Reviews", "ControlPanel", FormMethod.Post))
+{
+    <div class="form-horizontal admin-form appointment-form">
+
+        <h3>Отзиви</h3><hr />
+        <div class="row">
+
+            <div class="form-group col-sm-3">
+                @Html.LabelFor(x => x.Type)
+                @Html.DropDownListFor(x => x.Type, Model.ReviewsTypes)
+            </div>
+
+            <div class="form-group col-sm-3">
+                @Html.LabelFor(x => x.Order)
+                @Html.DropDownListFor(x => x.Order, Model.ReviewsSortOrder)
+            </div>
+
+            <div class="form-group col-sm-3">
+                <input type="submit" value="Потвърди" class="btn btn-primary" />
+            </div>
+
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("Appointments", "ControlPanel", FormMethod.Post))
+{
+    <div class="form-horizontal admin-form appointment-form">
+
+        <h3>Резервации</h3><hr />
+        <div class="row">
+            <div class="form-group col-sm-3">
+                <label for="appointmentAppreved">Състояние</label>
+                <select id="appointmentAppreved">
+                    <option value="published">Публикувани</option>
+                    <option value="unpublished">Непобликувани</option>
+                    <option value="all">Всички</option>
+                </select>
+            </div>
+
+            <div class="form-group col-sm-3">
+                <label for="sorting">Сортиране</label>
+                <select id="sorting">
+                    <option value="ascending">Възходящо</option>
+                    <option value="descending">Низходящо</option>
+                </select>
+            </div>
+
+            <div class="form-group col-sm-3">
+                <input type="submit" value="Потвърди" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+@Scripts.Render("~/bundles/jqueryval")

@@ -56,6 +56,10 @@
                         <li>@Html.ActionLink("Отзиви", "Index", "Reviews")</li>
                         <li>@Html.ActionLink("Резервация", "Index", "Appointment")</li>
                         <li>@Html.ActionLink("Контакти", "Index", "ContactUs")</li>
+                       @if (this.User.IsInRole("Admin"))
+                       {
+                        <li>@Html.ActionLink("Контролен панел", "Index", "ControlPanel")</li>
+                       }
                     </ul>
                     @Html.Partial("_LoginPartial")
                 </div>
