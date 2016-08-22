@@ -1,19 +1,15 @@
 ﻿namespace Hotel.App.Models.ViewModels
 {
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Web.Mvc;
-
     public class ControlPanelViewModel
     {
-        [DisplayName("Тип")]
-        public string Type { get; set; }
+        public string ReviewsType { get; set; }
 
-        public IEnumerable<SelectListItem> ReviewsTypes { get; set; }
+        public string ReviewsSortOrder { get; set; }
 
-        [DisplayName("Сортирай")]
-        public string Order { get; set; }
+        public string ReviewContent { get; set; }
 
-        public IEnumerable<SelectListItem> ReviewsSortOrder { get; set; }
+        public string AppointmentType { get; set; }
+
+        public string AppointmentSortOrder { get; set; }
     }
 }

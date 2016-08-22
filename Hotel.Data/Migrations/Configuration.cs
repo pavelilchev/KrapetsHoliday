@@ -98,6 +98,7 @@
                     comment.Content = "Коментарът трябва да бъде смислен " + k;
                     comment.CreationTime = DateTime.Now;
                     comment.Review = review;
+                    comment.IsPublished = true;
 
                     context.Comments.Add(comment);
                 }

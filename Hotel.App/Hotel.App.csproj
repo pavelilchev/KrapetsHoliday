@@ -432,17 +432,19 @@
     <Content Include="Views\Reviews\DisplayTemplates\ReviewVewModel.cshtml" />
     <Content Include="Views\Appointment\Index.cshtml" />
     <Content Include="Views\Shared\_Messages.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\ReviewComment.cshtml" />
+    <Content Include="Views\Reviews\DisplayTemplates\ReviewComment.cshtml" />
     <Content Include="Views\Shared\_ReviewComment.cshtml" />
     <Content Include="Views\ContactUs\Index.cshtml" />
     <Content Include="Views\ContactUs\_Email.cshtml" />
     <Content Include="Views\ControlPanel\Index.cshtml" />
     <Content Include="Views\ControlPanel\Appointments.cshtml" />
     <Content Include="Views\ControlPanel\Reviews.cshtml" />
-    <Content Include="Views\ControlPanel\DisplayTemplates\ReviewVewModel.cshtml" />
+    <Content Include="Views\ControlPanel\DisplayTemplates\Review.cshtml" />
+    <None Include="Views\ControlPanel\DisplayTemplates\ReviewComment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Shared\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

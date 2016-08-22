@@ -437,13 +437,19 @@ h1 {
 /* #endregion Appointment*/
 
 /* region Admin panel*/
-.appointment-form .form-group {
-    padding-bottom: 5px;
+.admin-form, .admin-form label, .admin-form .form-group{
+    margin:0;
+    padding:0;
 }
 
-.appointment-form .form-group .btn{
-    margin-top: 11px;
+.admin-form .row{
+    padding-bottom:30px;
 }
+
+.admin-form .btn{
+    margin-top:11px;
+}
+
 /* endregion Admin panel*/
 
 /* #region Default queries */

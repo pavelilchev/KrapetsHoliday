@@ -21,5 +21,7 @@
 
         [Required]
         public virtual Review Review { get; set; }
+
+        public bool IsPublished { get; set; }
     }
 }

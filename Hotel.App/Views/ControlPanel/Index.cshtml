@@ -2,40 +2,16 @@
 
 <h1 class="text-left">Контролен панел</h1>
 
-@using (Html.BeginForm("Reviews", "ControlPanel", FormMethod.Post))
+@using (Html.BeginForm("ReviewsOption", "ControlPanel", FormMethod.Post))
 {
-    <div class="form-horizontal admin-form appointment-form">
+    <div class="form-horizontal admin-form">
 
         <h3>Отзиви</h3><hr />
         <div class="row">
-
             <div class="form-group col-sm-3">
-                @Html.LabelFor(x => x.Type)
-                @Html.DropDownListFor(x => x.Type, Model.ReviewsTypes)
-            </div>
-
-            <div class="form-group col-sm-3">
-                @Html.LabelFor(x => x.Order)
-                @Html.DropDownListFor(x => x.Order, Model.ReviewsSortOrder)
-            </div>
-
-            <div class="form-group col-sm-3">
-                <input type="submit" value="Потвърди" class="btn btn-primary" />
-            </div>
-
-        </div>
-    </div>
-}
-
-@using (Html.BeginForm("Appointments", "ControlPanel", FormMethod.Post))
-{
-    <div class="form-horizontal admin-form appointment-form">
-
-        <h3>Резервации</h3><hr />
-        <div class="row">
-            <div class="form-group col-sm-3">
-                <label for="appointmentAppreved">Състояние</label>
-                <select id="appointmentAppreved">
+                @Html.HiddenFor(m => m.ReviewsType)
+                <label for="reviewType" class="col-xs-12">Състояние</label>
+                <select id="reviewType">
                     <option value="published">Публикувани</option>
                     <option value="unpublished">Непобликувани</option>
                     <option value="all">Всички</option>
@@ -43,13 +19,51 @@
             </div>
 
             <div class="form-group col-sm-3">
-                <label for="sorting">Сортиране</label>
-                <select id="sorting">
+                @Html.HiddenFor(m => m.ReviewsSortOrder)
+                <label for="reviewSorting"  class="col-xs-12">Сортиране</label>
+                <select id="reviewSorting">
                     <option value="ascending">Възходящо</option>
                     <option value="descending">Низходящо</option>
                 </select>
             </div>
 
+            <div class="form-group col-sm-3">
+                @Html.LabelFor(m => m.ReviewContent, "Съдържание", new { @class = "col-xs-12" })
+                @Html.EditorFor(m => m.ReviewContent)
+            </div>
+
+            <div class="form-group col-sm-3">
+                <input type="submit" value="Потвърди" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("AppointmentsOption", "ControlPanel", FormMethod.Post))
+{
+    <div class="form-horizontal admin-form">
+
+        <h3>Резервации</h3><hr />
+        <div class="row">
+            <div class="form-group col-sm-3">
+                <label for="appType"  class="col-xs-12">Състояние</label>
+                <select id="appType">
+                    <option value="published">Публикувани</option>
+                    <option value="unpublished">Непобликувани</option>
+                    <option value="all">Всички</option>
+                </select>
+            </div>
+
+            <div class="form-group col-sm-3">
+                <label for="appSorting" class="col-xs-12">Сортиране</label>
+                <select id="appSorting">
+                    <option value="ascending">Възходящо</option>
+                    <option value="descending">Низходящо</option>
+                </select>
+            </div>
+
+            @Html.HiddenFor(m => m.AppointmentType)
+            @Html.HiddenFor(m => m.AppointmentSortOrder)
             <div class="form-group col-sm-3">
                 <input type="submit" value="Потвърди" class="btn btn-primary" />
             </div>
@@ -58,3 +72,4 @@
 }
 
 @Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/UI")

@@ -21,10 +21,8 @@
         // GET: Reviews
         public ActionResult Index(int page = 1, int count = 5)
         {
-            var allReviews = this.Data.Reviews.All();
+            var allReviews = this.Data.Reviews.All().Include(r => r.Comments).Include(r => r.Author);
             var reviews = allReviews
-                .Include(r => r.Comments)
-                .Include(r => r.Author)
                 .OrderByDescending(r => r.CreationDate)
                 .Skip((page - 1) * count)
                 .Take(count)
