@@ -1,0 +1,38 @@
+﻿@model Hotel.Models.Review
+
+<div id="editReview">
+    <div class="row single-review">
+
+        <div class="col-sm-offset-2 col-md-2 col-sm-3 text-center author-info">
+            <div class="review-author">@Model.Author.UserName</div>
+            <div class="review-date">@Model.CreationDate</div>
+            <div>@(Model.Rating)</div>
+        </div>
+
+        <div class="col-md-8 col-sm-7  text-left review-body">
+            <div>@Model.Content</div>
+
+
+            @using (Ajax.BeginForm("EditReview", "ControlPanel", new AjaxOptions()
+            {
+                UpdateTargetId = "editReview",
+                HttpMethod = "Post"
+            }))
+            {
+                <input name="id" type="hidden" value="@Model.Id">
+                <label for="">Публикуван</label>
+                <input checked="@Model.IsPublished" class="check-box" name="isPublished" type="checkbox" value="@Model.IsPublished">
+
+                <input type="submit" value="Потвърди" class="btn btn-default" />
+            }
+
+        </div>
+
+        <div class="col-md-8 col-sm-7  text-left review-body">
+            @Html.DisplayFor(m => m.Comments)
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/ajax")
+

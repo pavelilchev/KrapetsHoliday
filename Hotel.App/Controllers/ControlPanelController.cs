@@ -35,7 +35,7 @@
             {
                 reviews = reviews.Where(r => r.IsPublished == true);
             }
-            else
+            else if(type == "unpublished")
             {
                 reviews = reviews.Where(r => r.IsPublished == false);
             }
@@ -67,10 +67,21 @@
         }
 
         [HttpPost]
-        public Task<ActionResult> EditReview(Review reviewModel)
+        public ActionResult EditReview(string id, string isPublished)
         {
-           
-            return null;
+            int intId;
+            bool isInt = int.TryParse(id, out intId);
+            if (!isInt)
+            {
+                return this.HttpNotFound();
+            }
+
+            var review = this.Data.Reviews.Find(intId);
+            review.IsPublished = isPublished != null;
+
+            this.Data.SaveChanges();
+
+            return this.View("_Review", review);
         }
     }
 }

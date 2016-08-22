@@ -2,4 +2,7 @@
 
 <h1 class="review-title text-center">Отзиви</h1>
 
-@Html.DisplayForModel()
+@foreach (var review in Model)
+{
+    @Html.Partial("_Review", review)
+}

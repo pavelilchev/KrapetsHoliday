@@ -439,8 +439,8 @@
     <Content Include="Views\ControlPanel\Index.cshtml" />
     <Content Include="Views\ControlPanel\Appointments.cshtml" />
     <Content Include="Views\ControlPanel\Reviews.cshtml" />
-    <Content Include="Views\ControlPanel\DisplayTemplates\Review.cshtml" />
     <None Include="Views\ControlPanel\DisplayTemplates\ReviewComment.cshtml" />
+    <Content Include="Views\ControlPanel\_Review.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
