@@ -7,6 +7,8 @@
     using Data.UnitOfWork;
     using Hotel.Models;
     using Models.ViewModels;
+    using System.Data.Entity;
+    using System.Threading.Tasks;
 
     [Authorize]
     public class ControlPanelController : BaseController
@@ -18,35 +20,56 @@
 
         public ActionResult Index()
         {
-            var model = new ControlPanelViewModel();
-            model.ReviewsTypes = new[]
+            return this.View();
+        }
+
+        [HttpPost]
+        public ActionResult ReviewsOption(ControlPanelViewModel model)
+        {
+            var type = model.ReviewsType;
+            var order = model.ReviewsSortOrder;
+            var content = model.ReviewContent;
+
+            var reviews = this.Data.Reviews.All().Include(r => r.Comments).Include(r => r.Author);
+            if (type == "published")
             {
-                new SelectListItem { Value = "published", Text = "Публикувани" },
-                new SelectListItem { Value = "unpublished", Text = "Непубликувани" },
-                new SelectListItem { Value = "all", Text = "Всички" },
-            };
+                reviews = reviews.Where(r => r.IsPublished == true);
+            }
+            else
+            {
+                reviews = reviews.Where(r => r.IsPublished == false);
+            }
 
-            model.ReviewsSortOrder = new[]
-           {
-                new SelectListItem { Value = "ascending", Text = "Възходящо" },
-                new SelectListItem { Value = "descending", Text = "Низходящо" }
-            };
+            if (!string.IsNullOrEmpty(content))
+            {
+                reviews = reviews.Where(r => r.Content.Contains(content));
+            }
 
-            return this.View(model);
+
+            if (order == "ascending")
+            {
+                reviews = reviews.OrderBy(r => r.CreationDate);
+            }
+            else
+            {
+                reviews = reviews.OrderByDescending(r => r.CreationDate);
+            }
+
+            return this.View("Reviews", reviews.ToList());
         }
 
         [HttpPost]
-        public ActionResult Reviews([Bind(Include = "Type,Order")] ControlPanelViewModel model)
+        public ActionResult AppointmentsOption(ControlPanelViewModel model)
         {
-            var reviews = this.Data.Reviews.All().ToList();
-            var vmReviews = Mapper.Map<IEnumerable<Review>, IEnumerable<ReviewVewModel>>(reviews);
-
-            return this.View(vmReviews);
+            var type = model.AppointmentType;
+            var order = model.AppointmentSortOrder;
+            return null;
         }
 
         [HttpPost]
-        public ActionResult Appointments()
+        public Task<ActionResult> EditReview(Review reviewModel)
         {
+           
             return null;
         }
     }
