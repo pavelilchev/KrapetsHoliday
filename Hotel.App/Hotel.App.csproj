@@ -433,8 +433,7 @@
     <Content Include="Views\Reviews\DisplayTemplates\ReviewVewModel.cshtml" />
     <Content Include="Views\Appointment\Index.cshtml" />
     <Content Include="Views\Shared\_Messages.cshtml" />
-    <Content Include="Views\Reviews\DisplayTemplates\ReviewComment.cshtml" />
-    <Content Include="Views\Shared\_ReviewComment.cshtml" />
+    <Content Include="Views\Reviews\_CreateReviewComment.cshtml" />
     <Content Include="Views\ContactUs\Index.cshtml" />
     <Content Include="Views\ContactUs\_Email.cshtml" />
     <Content Include="Views\ControlPanel\Index.cshtml" />
@@ -442,6 +441,7 @@
     <Content Include="Views\ControlPanel\Reviews.cshtml" />
     <Content Include="Views\ControlPanel\_Review.cshtml" />
     <Content Include="Views\ControlPanel\_ReviewComment.cshtml" />
+    <Content Include="Views\Reviews\_Comment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -28,9 +28,15 @@
 
 <h3 class="col-lg-12 text-left">Коментари</h3>
 
-@Html.DisplayFor(m => m.Comments)
+@foreach (var comment in Model.Comments)
+{
+    if (comment.IsPublished)
+    {
+        @Html.Partial("_Comment", comment)
+    }
+}
     
-@Html.Partial("_ReviewComment", new Hotel.App.Models.ViewModels.ReviewCommentViewModel{ ReviewId = Model.Id})
+@Html.Partial("_CreateReviewComment", new Hotel.App.Models.ViewModels.ReviewCommentViewModel{ ReviewId = Model.Id})
 
 <div>
     @Html.ActionLink("Назад", "Index")

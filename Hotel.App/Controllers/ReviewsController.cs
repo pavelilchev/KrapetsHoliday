@@ -21,7 +21,7 @@
         // GET: Reviews
         public ActionResult Index(int page = 1, int count = 5)
         {
-            var allReviews = this.Data.Reviews.All().Include(r => r.Comments).Include(r => r.Author);
+            var allReviews = this.Data.Reviews.All().Where(r => r.IsPublished).Include(r => r.Comments).Include(r => r.Author);
             var reviews = allReviews
                 .OrderByDescending(r => r.CreationDate)
                 .Skip((page - 1) * count)
@@ -73,6 +73,7 @@
             {
                 review.Author = this.UserProfile;
                 review.CreationDate = DateTime.Now;
+                review.IsPublished = false;
 
                 this.Data.Reviews.Add(review);
                 this.Data.SaveChanges();
@@ -110,6 +111,7 @@
                 this.Data.SaveChanges();
                 return this.RedirectToAction("Index");
             }
+
             return this.View(review);
         }
 
@@ -136,7 +138,8 @@
         public ActionResult DeleteConfirmed(int id)
         {
             Review review = this.Data.Reviews.Find(id);
-            this.Data.Reviews.Remove(review);
+            review.IsPublished = false;
+            this.Data.Reviews.Update(review);
             this.Data.SaveChanges();
 
             return this.RedirectToAction("Index");
@@ -156,6 +159,7 @@
                 reviewComment.Author = this.UserProfile;
                 reviewComment.CreationTime = DateTime.Now;
                 reviewComment.Review = review;
+                reviewComment.IsPublished = false;
 
                 this.Data.Comments.Add(reviewComment);
                 this.Data.SaveChanges();
