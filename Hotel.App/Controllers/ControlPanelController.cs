@@ -1,19 +1,15 @@
 ﻿namespace Hotel.App.Controllers
 {
-    using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
-    using AutoMapper;
     using Data.UnitOfWork;
-    using Hotel.Models;
     using Models.ViewModels;
     using System.Data.Entity;
-    using System.Threading.Tasks;
 
     [Authorize]
     public class ControlPanelController : BaseController
     {
-        public ControlPanelController(IHotelData data) 
+        public ControlPanelController(IHotelData data)
             : base(data)
         {
         }
@@ -35,7 +31,7 @@
             {
                 reviews = reviews.Where(r => r.IsPublished == true);
             }
-            else if(type == "unpublished")
+            else if (type == "unpublished")
             {
                 reviews = reviews.Where(r => r.IsPublished == false);
             }
@@ -81,7 +77,38 @@
 
             this.Data.SaveChanges();
 
-            return this.View("_Review", review);
+            return this.PartialView("_Review", review);
+        }
+
+        [HttpPost]
+        public ActionResult EditComment(string reviewId, string commentId, string isPublished)
+        {
+            int intReviewId;
+            bool isInt = int.TryParse(reviewId, out intReviewId);
+            if (!isInt)
+            {
+                return this.HttpNotFound();
+            }
+
+            var review = this.Data.Reviews.All().Include(r => r.Author).FirstOrDefault(r => r.Id == intReviewId);
+
+            if (review == null)
+            {
+                return this.HttpNotFound();
+            }
+
+            var comment = review.Comments.FirstOrDefault(c => c.Id == int.Parse(commentId));
+
+            if (comment == null)
+            {
+                return this.HttpNotFound();
+            }
+
+            comment.IsPublished = isPublished != null;
+
+            this.Data.SaveChanges();
+
+            return this.PartialView("_ReviewComment", comment);
         }
     }
 }

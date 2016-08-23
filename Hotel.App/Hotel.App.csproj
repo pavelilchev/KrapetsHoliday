@@ -361,6 +361,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\contactus.js" />
+    <Content Include="Scripts\control-panel.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
     <Content Include="Scripts\jquery-3.1.0.min.js" />
     <Content Include="Scripts\jquery-3.1.0.slim.js" />
@@ -439,11 +440,12 @@
     <Content Include="Views\ControlPanel\Index.cshtml" />
     <Content Include="Views\ControlPanel\Appointments.cshtml" />
     <Content Include="Views\ControlPanel\Reviews.cshtml" />
-    <None Include="Views\ControlPanel\DisplayTemplates\ReviewComment.cshtml" />
     <Content Include="Views\ControlPanel\_Review.cshtml" />
+    <Content Include="Views\ControlPanel\_ReviewComment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ControlPanel\DisplayTemplates\" />
     <Folder Include="Views\Shared\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>

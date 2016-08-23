@@ -60,6 +60,9 @@
             bundles.Add(new ScriptBundle("~/bundles/UI").Include(
                  "~/Scripts/jQueryUI/jquery-ui.min.js",
                  "~/Scripts/appointment.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/controlpanel").Include(
+                "~/Scripts/control-panel.js"));
         }
     }
 }

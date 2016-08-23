@@ -450,6 +450,14 @@ h1 {
     margin-top:11px;
 }
 
+.success-message{
+    display:none;
+    text-align:center;
+    background-color:aqua;
+    border-radius:5px;
+    max-width:100px;
+    padding:5px;
+}
 /* endregion Admin panel*/
 
 /* #region Default queries */

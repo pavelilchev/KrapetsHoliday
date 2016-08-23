@@ -1,0 +1,30 @@
+﻿@model Hotel.Models.ReviewComment
+
+<div id="editComment@(Model.Review.Id)_@(Model.Id)">
+    <div class="row single-comment">
+        <div class="col-md-8 col-sm-7  text-left review-body">
+
+            <div>@Model.Content</div>
+            <div>@Model.Author.UserName</div>
+            <div>@Model.CreationTime</div>
+
+            @using (Ajax.BeginForm("EditComment", "ControlPanel", new AjaxOptions()
+            {
+                UpdateTargetId = "editComment" + Model.Review.Id + "_" + Model.Id,
+                HttpMethod = "Post",
+                InsertionMode = InsertionMode.Replace,
+                OnSuccess = "success('" + Model.Review.Id + '_'  + Model.Id+ "')"
+            }))
+            {
+                <input name="reviewId" type="hidden" value="@Model.Review.Id">
+                <input name="commentId" type="hidden" value="@Model.Id">
+                <label for="">Публикуван</label>
+                    <input checked="@Model.IsPublished" class="check-box" name="isPublished" type="checkbox" value="@Model.IsPublished">
+
+                    <input type="submit" value="Потвърди" class="btn btn-default" />
+                    <span class="success-message" id="review@(Model.Review.Id)_@(Model.Id)">Успех!</span>
+            }
+
+        </div>
+    </div>
+</div>
