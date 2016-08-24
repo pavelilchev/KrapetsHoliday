@@ -1,3 +1,3 @@
 ﻿function success(arg) {
-    $("#review" + arg).show().fadeOut(3000);
+    $("#entry" + arg).show().fadeOut(3000);
 }

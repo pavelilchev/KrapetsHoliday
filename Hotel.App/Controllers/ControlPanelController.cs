@@ -5,6 +5,8 @@
     using Data.UnitOfWork;
     using Models.ViewModels;
     using System.Data.Entity;
+    using System.Collections.Generic;
+    using System;
 
     [Authorize]
     public class ControlPanelController : BaseController
@@ -59,8 +61,47 @@
         {
             var type = model.AppointmentType;
             var order = model.AppointmentSortOrder;
-            return null;
+
+            var appointments = this.Data.Appointments.All();
+            if (type == "approved")
+            {
+                appointments = appointments.Where(r => r.IsApproved == true);
+            }
+            else if (type == "unapproved")
+            {
+                appointments = appointments.Where(r => r.IsApproved == false);
+            }
+
+            if (order == "ascending")
+            {
+                appointments = appointments.OrderBy(r => r.StartDtae);
+            }
+            else
+            {
+                appointments = appointments.OrderByDescending(r => r.StartDtae);
+            }
+
+            return this.View("Appointments", appointments.ToList());
         }
+
+        [HttpPost]
+        public ActionResult EditAppointment(string id, string isPublished)
+        {
+            int intId;
+            bool isInt = int.TryParse(id, out intId);
+            if (!isInt)
+            {
+                return this.HttpNotFound();
+            }
+
+            var appointment = this.Data.Appointments.Find(intId);
+            appointment.IsApproved = isPublished != null;
+
+            this.Data.SaveChanges();
+
+            return this.PartialView("_Appointment", appointment);
+        }
+
 
         [HttpPost]
         public ActionResult EditReview(string id, string isPublished)

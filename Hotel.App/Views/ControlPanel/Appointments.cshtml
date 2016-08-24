@@ -1,7 +1,13 @@
-﻿
-@{
-    ViewBag.Title = "Appointments";
-}
+﻿@model IEnumerable<Hotel.Models.Appointment>
 
-<h2>Appointments</h2>
+<h1 class="review-title text-center">Резервации</h1>
 
+<div class="admin-appointments">
+    @foreach (var review in Model)
+    {
+        @Html.Partial("_Appointment", review)
+    }
+</div>
+
+@Scripts.Render("~/bundles/ajax")
+@Scripts.Render("~/bundles/controlpanel")

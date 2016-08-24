@@ -1,0 +1,85 @@
+﻿@model Hotel.Models.Appointment
+
+<div id="editAppointment@(Model.Id)">
+    <div class="single-appointment">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="col-xs-12">
+                    @Html.LabelFor(m => m.FirstName, "Име")
+                </div>
+                @Html.DisplayTextFor(m => m.FirstName)
+            </div>
+            <div class="col-sm-3">
+                <div class="col-xs-12">
+                    @Html.LabelFor(m => m.LastName, "Фамилия")
+                </div>
+                @Html.DisplayTextFor(m => m.LastName)
+            </div>
+            <div class="col-sm-3">
+                <div class="col-xs-12">
+                    @Html.LabelFor(m => m.Email, "Имейл")
+                </div>
+                @Html.DisplayTextFor(m => m.Email)
+            </div>
+            <div class="col-sm-3">
+                <div class="col-xs-12">
+                    @Html.LabelFor(m => m.Phone, "Телефон")
+                </div>
+                @Html.DisplayTextFor(m => m.Phone)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="col-xs-12">
+                    @Html.LabelFor(m => m.HosesCount, "Брой")
+                </div>
+                @Html.DisplayTextFor(m => m.HosesCount)
+            </div>
+            <div class="col-sm-3">
+                <div class="col-xs-12">
+                    @Html.LabelFor(m => m.StartDtae, "От дата")
+                </div>
+                @Html.DisplayFor(m => m.StartDtae, "ShortDateTime")
+            </div>
+            <div class="col-sm-3">
+                <div class="col-xs-12">
+                    @Html.LabelFor(m => m.EndDate, "До дата")
+                </div>
+                @Html.DisplayFor(m => m.EndDate, "ShortDateTime")
+            </div>
+            <div class="col-sm-3">
+                <div class="col-xs-12">
+                    @Html.LabelFor(m => m.CreationTime)
+                </div>
+                @Html.DisplayTextFor(m => m.CreationTime)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="col-xs-12">
+                    @Html.LabelFor(m => m.Comment, "Коментар")
+                </div>
+                @Html.DisplayTextFor(m => m.Comment)
+            </div>
+        </div>
+
+        @using (Ajax.BeginForm("EditAppointment", "ControlPanel", new AjaxOptions()
+        {
+            UpdateTargetId = "editAppointment" + Model.Id,
+            HttpMethod = "Post",
+            InsertionMode = InsertionMode.Replace,
+            OnSuccess = "success(" + Model.Id + ")"
+        }))
+        {
+            <input name="id" type="hidden" value="@Model.Id">
+            <label for="">Одобрен</label>
+            <input checked="@Model.IsApproved" class="check-box" name="isPublished" type="checkbox" value="@Model.IsApproved">
+
+            <input type="submit" value="Потвърди" class="btn btn-default" />
+            <span class="success-message" id="entry@(Model.Id)">Потвърдено!</span>
+        }
+        <hr />
+    </div>
+</div>

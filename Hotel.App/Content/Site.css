@@ -458,6 +458,23 @@ h1 {
     max-width:100px;
     padding:5px;
 }
+
+.admin-appointments{
+    max-width:760px;
+}
+
+.single-appointment .row{
+    margin-bottom: 30px;    
+    margin-left:0;
+}
+
+.single-appointment .row div{
+    padding-left:0;
+}
+
+.single-appointment hr{
+      margin-bottom: 50px;    
+}
 /* endregion Admin panel*/
 
 /* #region Default queries */
