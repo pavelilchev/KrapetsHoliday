@@ -8,6 +8,7 @@
     using AutoMapper;
     using System.Net.Mail;
     using System.Threading.Tasks;
+    using Utils;
 
     public class AppointmentController : BaseController
     {
@@ -39,7 +40,8 @@
 
 
                 var message = new MailMessage();
-                message.To.Add(new MailAddress(Resources.Email));
+                var toEmail = XmlHelper.GetNode("LeadsEmail");
+                message.To.Add(new MailAddress(toEmail));
                 message.Subject = "Имейл за резервация от Крапец Холидей";
                 message.Body = this.FillClientInfo(appointmentModel);
                 message.IsBodyHtml = true;

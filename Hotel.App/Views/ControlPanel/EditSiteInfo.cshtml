@@ -1,0 +1,47 @@
+﻿@model Hotel.App.Models.ViewModels.SiteInfoViewModel
+
+<h1>Сайт инфо</h1>
+<hr>
+
+<div id="edit-siteinfo">
+    @using (Ajax.BeginForm("EditSiteInfo", "ControlPanel", new AjaxOptions()
+            {
+                UpdateTargetId = "edit-siteinfo",
+                HttpMethod = "Post",
+                InsertionMode = InsertionMode.Replace,
+                OnSuccess = "successUpdateSiteinfo()"
+            }))
+            {
+        <div class="row">
+            <div class="col-sm-3">
+                @Html.LabelFor(model => model.LeadsEmail, "Имейл", htmlAttributes: new { @class = "col-xs-12" })
+                @Html.EditorFor(model => model.LeadsEmail)
+            </div>
+
+            <div class="col-sm-3">
+                @Html.LabelFor(model => model.FacebookUrl, "Фейсбук", htmlAttributes: new { @class = "col-xs-12" })
+                @Html.EditorFor(model => model.FacebookUrl)
+            </div>
+
+            <div class="col-sm-3">
+                @Html.LabelFor(model => model.GooglePlusUrl, "Гугъл", htmlAttributes: new { @class = "col-xs-12" })
+                @Html.EditorFor(model => model.GooglePlusUrl)
+            </div>
+
+            <div class="col-sm-3">
+                @Html.LabelFor(model => model.Skype, "Скайп", htmlAttributes: new { @class = "col-xs-12" })
+                @Html.EditorFor(model => model.Skype)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                @Html.LabelFor(model => model.PhoneNumber, "Телефон", htmlAttributes: new { @class = "col-xs-12" })
+                @Html.EditorFor(model => model.PhoneNumber)
+            </div>
+        </div>
+
+        <input type="submit" value="Потвърди" class="btn btn-default" />
+            <span class="success-message" id="siteinfoSuccessMsg">Запазено!</span>
+    }
+</div>

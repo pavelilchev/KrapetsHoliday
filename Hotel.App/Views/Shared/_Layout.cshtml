@@ -33,7 +33,7 @@
                     <div class="header-container-right col-sm-4 col-md-4  text-right">
                         <div class="header-location">
                             <p>село Крапец</p>
-                            <a href="tel:@Resources.PhoneNumber">тел: @Resources.PhoneNumber.BeautifyPhoneNumber()</a>
+                            <a href="tel:@XmlHelper.GetNode("PhoneNumber")">тел: @XmlHelper.GetNode("PhoneNumber").BeautifyPhoneNumber()</a>
                         </div>
                     </div>
                 </div>
@@ -83,8 +83,8 @@
                 <div class="row">
                     <div class="footer-container-left col-sm-4 col-md-4">
                         <div class="social-icons">
-                            <a href="@Resources.FacebookUrl" target="_blank" class="facebook-icon"></a>
-                            <a href="@Resources.GooglePlusUrl" target="_blank" class="google-icon"></a>
+                            <a href="@XmlHelper.GetNode("FacebookUrl")" target="_blank" class="facebook-icon"></a>
+                            <a href="@XmlHelper.GetNode("GooglePlusUrl")" target="_blank" class="google-icon"></a>
                         </div>
                     </div>
                     <div class="footer-container-middle col-sm-4 col-md-4">
@@ -92,7 +92,7 @@
                     </div>
                     <div class="footer-container-right col-sm-4 col-md-4 text-right">
                         <p>село Крапец</p>
-                        <a href="tel:@Resources.PhoneNumber">тел: @Resources.PhoneNumber.BeautifyPhoneNumber()</a>
+                        <a href="tel:@XmlHelper.GetNode("PhoneNumber")">тел: @XmlHelper.GetNode("PhoneNumber").BeautifyPhoneNumber()</a>
                     </div>
                 </div>
             </div>

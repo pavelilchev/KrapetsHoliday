@@ -5,10 +5,9 @@
     using Data.UnitOfWork;
     using Models.ViewModels;
     using System.Data.Entity;
-    using System.Collections.Generic;
-    using System;
+    using System.Resources;
 
-    [Authorize]
+    [Authorize(Roles ="Admin")]
     public class ControlPanelController : BaseController
     {
         public ControlPanelController(IHotelData data)
@@ -150,6 +149,22 @@
             this.Data.SaveChanges();
 
             return this.PartialView("_ReviewComment", comment);
+        }
+
+        public ActionResult EditSiteInfo()
+        {
+            var info = new SiteInfoViewModel();
+
+            return View(info);
+        }
+
+        [HttpPost]
+        public ActionResult EditSiteInfo(SiteInfoViewModel model)
+        {
+
+           
+
+            return View();
         }
     }
 }

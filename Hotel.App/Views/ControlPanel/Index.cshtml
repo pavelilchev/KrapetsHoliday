@@ -20,7 +20,7 @@
 
             <div class="form-group col-sm-3">
                 @Html.HiddenFor(m => m.ReviewsSortOrder)
-                <label for="reviewSorting"  class="col-xs-12">Сортиране</label>
+                <label for="reviewSorting" class="col-xs-12">Сортиране</label>
                 <select id="reviewSorting">
                     <option value="ascending">Възходящо</option>
                     <option value="descending">Низходящо</option>
@@ -46,7 +46,7 @@
         <h3>Резервации</h3><hr />
         <div class="row">
             <div class="form-group col-sm-3">
-                <label for="appType"  class="col-xs-12">Състояние</label>
+                <label for="appType" class="col-xs-12">Състояние</label>
                 <select id="appType">
                     <option value="approved">Публикувани</option>
                     <option value="unapproved">Непобликувани</option>
@@ -70,6 +70,11 @@
         </div>
     </div>
 }
+
+<div class="row">
+    <h3>Сайт Инфо</h3><hr />
+    <a href="/ControlPanel/EditSiteInfo" class="btn btn-danger">Редактирай</a>
+</div>
 
 @Scripts.Render("~/bundles/jqueryval")
 @Scripts.Render("~/bundles/UI")

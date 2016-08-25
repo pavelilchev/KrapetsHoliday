@@ -8,6 +8,7 @@
     using Models.ViewModels;
     using AutoMapper;
     using Hotel.Models;
+    using Utils;
 
     public class ContactUsController : BaseController
     {
@@ -50,7 +51,8 @@
                 this.Data.SaveChanges();
 
                 var message = new MailMessage();
-                message.To.Add(new MailAddress(Resources.Email));
+                var toEmail = XmlHelper.GetNode("LeadsEmail");
+                message.To.Add(new MailAddress(toEmail));
                 message.Subject = "Имейл изпратен от контактната форма на Крапетц Холидей";
                 message.Body = email.Content;
                 message.IsBodyHtml = true;

@@ -9,9 +9,6 @@
 
     public class BaseController : Controller
     {
-        private IHotelData data;
-        private User userProfile;
-
         protected BaseController(IHotelData data)
         {
             this.Data = data;

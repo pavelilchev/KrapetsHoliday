@@ -14,10 +14,7 @@
         // itemsDesktopSmall : false,
         // itemsTablet: false,
         // itemsMobile : false
-
     });
-
-   
 
     setTimeout(function () {
         $(".global-message").fadeOut( "slow" );
