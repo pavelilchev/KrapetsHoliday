@@ -16,4 +16,10 @@
         // itemsMobile : false
 
     });
+
+   
+
+    setTimeout(function () {
+        $(".global-message").fadeOut( "slow" );
+    }, 3000);
 });
