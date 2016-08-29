@@ -2,7 +2,7 @@
 {
     using System.Linq;
     using System.Web.Mvc;
-    using Hotel.Data.UnitOfWork;
+    using Data.UnitOfWork;
     using Hotel.Models;
     using Models.ViewModels;
     using AutoMapper;
@@ -59,7 +59,7 @@
 
         private string FillClientInfo(AppointmentViewModel model)
         {
-            var template = System.IO.File.ReadAllText(Server.MapPath("~/Files/Templates/AppointmentEmailTemplate.html"));
+            var template = System.IO.File.ReadAllText(this.Server.MapPath("~/Files/Templates/AppointmentEmailTemplate.html"));
             template = template.Replace("[TEMPLATE_NAME]", model.FirstName).
             Replace("[TEMPLATE_LAST_NAME]", model.LastName).
             Replace("[TEMPLATE_EMAIL]", model.Email).

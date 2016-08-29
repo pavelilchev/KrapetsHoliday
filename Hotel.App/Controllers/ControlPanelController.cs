@@ -155,16 +155,13 @@
         {
             var info = new SiteInfoViewModel();
 
-            return View(info);
+            return this.View(info);
         }
 
         [HttpPost]
         public ActionResult EditSiteInfo(SiteInfoViewModel model)
         {
-
-           
-
-            return PartialView();
+            return this.PartialView();
         }
     }
 }

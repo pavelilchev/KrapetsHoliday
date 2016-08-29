@@ -1,6 +1,6 @@
 ﻿namespace Hotel.App.Models.ViewModels
 {
-    using Hotel.App.Utils;
+    using Utils;
     using System.Reflection;
 
     public class SiteInfoViewModel
@@ -9,11 +9,11 @@
         {
             get
             {
-                return XmlHelper.GetNode(MethodInfo.GetCurrentMethod().Name.Substring(4));
+                return XmlHelper.GetNode(MethodBase.GetCurrentMethod().Name.Substring(4));
             }
             set
             {
-                XmlHelper.SetNodeValue(MethodInfo.GetCurrentMethod().Name.Substring(4), value);
+                XmlHelper.SetNodeValue(MethodBase.GetCurrentMethod().Name.Substring(4), value);
             }
         }
 
@@ -21,11 +21,11 @@
         {
             get
             {
-                return XmlHelper.GetNode(MethodInfo.GetCurrentMethod().Name.Substring(4));
+                return XmlHelper.GetNode(MethodBase.GetCurrentMethod().Name.Substring(4));
             }
             set
             {
-                XmlHelper.SetNodeValue(MethodInfo.GetCurrentMethod().Name.Substring(4), value);
+                XmlHelper.SetNodeValue(MethodBase.GetCurrentMethod().Name.Substring(4), value);
             }
         }
 
@@ -33,11 +33,11 @@
         {
             get
             {
-                return XmlHelper.GetNode(MethodInfo.GetCurrentMethod().Name.Substring(4));
+                return XmlHelper.GetNode(MethodBase.GetCurrentMethod().Name.Substring(4));
             }
             set
             {
-                XmlHelper.SetNodeValue(MethodInfo.GetCurrentMethod().Name.Substring(4), value);
+                XmlHelper.SetNodeValue(MethodBase.GetCurrentMethod().Name.Substring(4), value);
             }
         }
 
@@ -45,11 +45,11 @@
         {
             get
             {
-                return XmlHelper.GetNode(MethodInfo.GetCurrentMethod().Name.Substring(4));
+                return XmlHelper.GetNode(MethodBase.GetCurrentMethod().Name.Substring(4));
             }
             set
             {
-                XmlHelper.SetNodeValue(MethodInfo.GetCurrentMethod().Name.Substring(4), value);
+                XmlHelper.SetNodeValue(MethodBase.GetCurrentMethod().Name.Substring(4), value);
             }
         }
 
@@ -57,11 +57,11 @@
         {
             get
             {
-                return XmlHelper.GetNode(MethodInfo.GetCurrentMethod().Name.Substring(4));
+                return XmlHelper.GetNode(MethodBase.GetCurrentMethod().Name.Substring(4));
             }
             set
             {
-                XmlHelper.SetNodeValue(MethodInfo.GetCurrentMethod().Name.Substring(4), value);
+                XmlHelper.SetNodeValue(MethodBase.GetCurrentMethod().Name.Substring(4), value);
             }
         }
     }
