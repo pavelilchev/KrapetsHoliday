@@ -51,6 +51,8 @@
                     await smtp.SendMailAsync(message);
                 }
 
+                this.TempData["message"] = @"Резервацията Ви е изпратена успешно!
+                                             Ще се свържем с Вас до 2 работни часа за потвърждение!";
                 return this.View();
             }
 
@@ -64,7 +66,7 @@
             Replace("[TEMPLATE_LAST_NAME]", model.LastName).
             Replace("[TEMPLATE_EMAIL]", model.Email).
             Replace("[TEMPLATE_PHONE]", model.Phone).
-            Replace("[TEMPLATE_START_DATE]", model.StartDtae.ToString("dd.MM.yyyy")).
+            Replace("[TEMPLATE_START_DATE]", model.StartDate.ToString("dd.MM.yyyy")).
             Replace("[TEMPLATE_END_DATE]", model.EndDate.ToString("dd.MM.yyyy")).
             Replace("[TEMPLATE_COUNT]", model.HosesCount.ToString());
 

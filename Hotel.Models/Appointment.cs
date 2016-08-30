@@ -30,7 +30,7 @@
         [Required(ErrorMessage = "Моля, изберете начална дата")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime StartDtae { get; set; }
+        public DateTime StartDate { get; set; }
 
         [Required(ErrorMessage = "Моля, изберете крайна дата")]
         [DataType(DataType.Date)]

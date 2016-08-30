@@ -73,11 +73,11 @@
 
             if (order == "ascending")
             {
-                appointments = appointments.OrderBy(r => r.StartDtae);
+                appointments = appointments.OrderBy(r => r.StartDate);
             }
             else
             {
-                appointments = appointments.OrderByDescending(r => r.StartDtae);
+                appointments = appointments.OrderByDescending(r => r.StartDate);
             }
 
             return this.View("Appointments", appointments.ToList());

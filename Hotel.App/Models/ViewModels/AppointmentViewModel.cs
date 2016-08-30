@@ -26,11 +26,9 @@
         public int HosesCount { get; set; }
 
         [Required(ErrorMessage = "Моля, изберете начална дата")]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime StartDtae { get; set; }
+        public DateTime StartDate { get; set; }
 
         [Required(ErrorMessage = "Моля, изберете крайна дата")]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime EndDate { get; set; }
 
         public string Comment { get; set; }
