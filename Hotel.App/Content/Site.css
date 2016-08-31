@@ -76,7 +76,8 @@ html, body {
 .nav li a:hover {
     color: red;
     background-color: #4cb4b8;
-
+    border: 1px solid red;
+    padding: 14px;
 }
 
 .reviews-container {
