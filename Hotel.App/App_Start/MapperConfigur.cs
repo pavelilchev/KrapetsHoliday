@@ -6,7 +6,7 @@
     using System;
     using System.Linq;
 
-    public static class MapperConfigur
+    public static class MapperConfig
     {
         public static void RegisterMappings()
         {
