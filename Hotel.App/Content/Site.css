@@ -445,8 +445,7 @@ h1 {
 
 /* region Admin panel*/
 .admin-form, .admin-form label, .admin-form .form-group{
-    margin:0;
-    padding:0;
+    
 }
 
 .admin-form .row{
@@ -454,7 +453,7 @@ h1 {
 }
 
 .admin-form .btn{
-    margin-top:11px;
+    margin-top:25px;
 }
 
 .success-message{
@@ -481,6 +480,31 @@ h1 {
 
 .single-appointment hr{
       margin-bottom: 50px;    
+}
+
+#edit-siteinfo input{
+    width:100%;
+    margin-bottom:30px;
+    padding:5px;
+    border-radius:5px;
+}
+
+.admin-form select, .admin-form input{
+    padding:5px;
+    margin-left: 15px;
+    border-radius:5px;
+}
+
+.admin-form label{
+    margin-bottom:5px;
+}
+
+.site-info-link{
+ margin-left:0;
+}
+
+.site-info-link a{
+    margin-bottom:30px;
 }
 /* endregion Admin panel*/
 
