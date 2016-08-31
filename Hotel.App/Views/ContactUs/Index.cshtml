@@ -6,20 +6,20 @@
         <a href="javascript:void(0);" data-url="@Url.Action("Create", "ContactUs")" class="create-email">
             <div class="icon-wrapper"><div class="aboutus-background envelope-background"></div></div>
             <div class="text-center">ИМЕЙЛ</div>
-            <div class="text-center">@Resources.Email</div>
+            <div class="text-center">@XmlHelper.GetNode("LeadsEmail")</div>
         </a>
     </div>
 
     <div class="contactus-element col-sm-3">
-        <a href="tel:@Resources.PhoneNumber">
+        <a href="tel:@XmlHelper.GetNode("PhoneNumber")">
             <div class="icon-wrapper"><div class="aboutus-background phone-background"></div></div>
             <div class="text-center">ТЕЛЕФОН</div>
-            <div class="text-center">@Resources.PhoneNumber.BeautifyPhoneNumber()</div>
+            <div class="text-center">@XmlHelper.GetNode("PhoneNumber").BeautifyPhoneNumber()</div>
         </a>
     </div>
 
     <div class="contactus-element col-sm-3">
-        <a href="skype:@Resources.Skype?call">
+        <a href="skype:@XmlHelper.GetNode("Skype")?call">
             <div class="icon-wrapper"><div class="aboutus-background skype-background"></div></div>
             <div class="text-center">СКАЙП</div>
             <div class="text-center">Обади ни се</div>
@@ -27,7 +27,7 @@
     </div>
 
     <div class="contactus-element col-sm-3">
-        <a href="@Resources.FacebookUrl" target="_blank">
+        <a href="@XmlHelper.GetNode("FacebookUrl")" target="_blank">
             <div class="icon-wrapper"><div class="aboutus-background facebook-background"></div></div>
             <div class="text-center">ФЕЙСБУК</div>
             <div class="text-center">Харесай ни</div>
