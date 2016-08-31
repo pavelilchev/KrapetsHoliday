@@ -4,6 +4,7 @@
 }
 
 .global-message {
+    position: absolute;
     text-align: center;
     display: block;
 }
@@ -12,6 +13,10 @@
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.body-content{
+    position:relative;
 }
 
 /* #region footer pusher*/

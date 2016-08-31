@@ -10072,3 +10072,9 @@ if ( !noGlobal ) {
 
 return jQuery;
 } );
+
+$(document).ready(function () {
+    setTimeout(function () {
+        $(".global-message").fadeOut("slow");
+    }, 3000);
+});

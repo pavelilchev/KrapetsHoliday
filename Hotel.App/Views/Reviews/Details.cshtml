@@ -35,8 +35,11 @@
         @Html.Partial("_Comment", comment)
     }
 }
-    
-@Html.Partial("_CreateReviewComment", new Hotel.App.Models.ViewModels.ReviewCommentViewModel{ ReviewId = Model.Id})
+
+@if (User.Identity.IsAuthenticated)
+{
+    @Html.Partial("_CreateReviewComment", new Hotel.App.Models.ViewModels.ReviewCommentViewModel { ReviewId = Model.Id })
+}
 
 <div>
     @Html.ActionLink("Назад", "Index")
