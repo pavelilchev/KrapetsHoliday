@@ -49,8 +49,6 @@
 
         protected override IAsyncResult BeginExecute(RequestContext requestContext, AsyncCallback callback, object state)
         {
-            Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
-
             if (requestContext.HttpContext.User.Identity.IsAuthenticated)
             {
                 var username = requestContext.HttpContext.User.Identity.Name;
