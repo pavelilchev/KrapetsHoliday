@@ -5,9 +5,9 @@
 
     public static class XmlHelper
     {
-        private const string SiteInfoPath = "~/SiteInfo.xml";
+        private const string SiteInfoPath = @"~/SiteInfo.xml";
 
-        private static XDocument doc = null;
+        private static XDocument doc;
 
         public static XDocument Document
         {

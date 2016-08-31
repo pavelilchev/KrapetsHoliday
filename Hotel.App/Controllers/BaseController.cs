@@ -20,22 +20,6 @@
         {
             this.UserProfile = userProfile;
         }
-
-        
-        private void BindHeader()
-        {
-            if (this.Session["ReviewsCount"] != null && this.Session["AverageRating"] != null)
-            {
-                return;
-            }
-
-            var reviews = this.Data.Reviews.All();
-            int reviewsCount = reviews.Count();
-            double averageRating = Math.Round((reviews.Sum(r => r.Rating) / (double)reviewsCount), 2);
-            this.Session["ReviewsCount"] = reviewsCount;
-            this.Session["AverageRating"] = averageRating;
-        }
-
         protected IHotelData Data { get; private set; }
 
         protected User UserProfile { get; private set; }
@@ -57,6 +41,20 @@
             }
 
             return base.BeginExecute(requestContext, callback, state);
+        }
+
+        private void BindHeader()
+        {
+            if (this.Session["ReviewsCount"] != null && this.Session["AverageRating"] != null)
+            {
+                return;
+            }
+
+            var reviews = this.Data.Reviews.All();
+            int reviewsCount = reviews.Count();
+            double averageRating = Math.Round((reviews.Sum(r => r.Rating) / (double)reviewsCount), 2);
+            this.Session["ReviewsCount"] = reviewsCount;
+            this.Session["AverageRating"] = averageRating;
         }
     }
 }

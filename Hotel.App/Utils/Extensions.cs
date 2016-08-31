@@ -2,16 +2,16 @@
 {
     public static class Extensions
     {
-        public static string BeautifyPhoneNumber(this string str)
+        public static string BeautifyPhoneNumber(this string phoneAsString)
         {
-            int position = str.Length - 3;
+            int position = phoneAsString.Length - 3;
             while (position > 3)
             {
-                str = str.Insert(position, " ");
+                phoneAsString = phoneAsString.Insert(position, " ");
                 position -= 3;
             }
 
-            return str;
+            return phoneAsString;
         }
     }
 }
